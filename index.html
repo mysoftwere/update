@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="MySoftwere — a collection of free online tools for HTML, PDF, URLs, text, SEO and productivity.">
+<title>MySoftwere — Free Online Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080d1a;--panel:#10182a;--panel2:#121d32;--line:rgba(170,190,230,.14);--text:#f4f7ff;--muted:#9caac4;--accent:#8b7cff;--accent2:#52e0c4;--shadow:0 24px 80px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% -5%,rgba(111,93,255,.22),transparent 38%),radial-gradient(ellipse at 96% 15%,rgba(36,204,184,.11),transparent 30%),var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(8,13,26,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-family:"Space Grotesk",sans-serif;font-size:21px;font-weight:700;letter-spacing:-.7px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#a99cff,#6357e8 60%,#46ddc1);display:grid;place-items:center;color:white;box-shadow:0 7px 25px #7568ff44}.logo svg{width:23px;height:23px}.brand span em{font-style:normal;color:#9c91ff}.navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:13px;font-weight:600}.navlinks a:hover{color:white}.nav-cta{background:#f5f5ff;color:#17152d;padding:10px 15px;border-radius:11px;font-weight:700}
+.hero{padding:76px 0 47px;position:relative}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:45px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(139,124,255,.35);background:rgba(139,124,255,.09);color:#c6bfff;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.2px}.pulse{width:7px;height:7px;background:#55e2c5;border-radius:50%;box-shadow:0 0 0 4px #55e2c51b}
+h1,h2,h3,p{margin-top:0}h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-3.4px;margin:22px 0 20px;max-width:720px}h1 .grad{background:linear-gradient(95deg,#b6aaff 3%,#7bcbff 48%,#65ebcb 95%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{max-width:570px;color:#aebbd3;font-size:17px;line-height:1.8;margin-bottom:28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:12px;font-weight:700;font-size:14px;transition:transform .2s,background .2s;border:1px solid transparent;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,#a89aff,#7768f2);color:white;box-shadow:0 12px 28px #7568ff30}.btn-secondary{border-color:var(--line);background:#ffffff08;color:#e7ecfa}.hero-note{display:flex;align-items:center;gap:9px;color:#8e9bb5;font-size:12px;margin-top:19px}.hero-note svg{color:#5fe0c1}
+.hero-art{position:relative;min-height:350px;display:grid;place-items:center}.orb{position:absolute;width:300px;height:300px;border-radius:50%;background:linear-gradient(145deg,#7565fa50,#38d9be16);filter:blur(2px);border:1px solid #9b8bff30;box-shadow:inset 0 0 60px #8a7cff16,0 0 100px #665aff12}.tool-window{position:relative;width:min(100%,390px);padding:18px;border:1px solid #aab9e52b;border-radius:23px;background:linear-gradient(145deg,#17223bdf,#0e1729f2);box-shadow:var(--shadow);transform:rotate(2deg)}.window-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:15px}.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#7787a6}.window-label{font-size:10px;color:#8f9cb7;font-weight:700;letter-spacing:1px}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mini{height:91px;border:1px solid var(--line);border-radius:14px;background:#ffffff05;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}.mini-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:17px;font-weight:700}.mini:nth-child(1) .mini-icon{background:#8b7cff25;color:#b7adff}.mini:nth-child(2) .mini-icon{background:#ff8aab1d;color:#ff9db7}.mini:nth-child(3) .mini-icon{background:#53dec21d;color:#69e6cb}.mini:nth-child(4) .mini-icon{background:#5baeff1d;color:#8cc8ff}.mini:nth-child(5) .mini-icon{background:#ffc76b1d;color:#ffd48d}.mini:nth-child(6) .mini-icon{background:#c38aff1d;color:#d5a8ff}.mini small{font-size:10px;color:#c0cbe0;font-weight:600}.floating-tag{position:absolute;border:1px solid var(--line);background:#131e33;padding:11px 14px;border-radius:13px;box-shadow:var(--shadow);font-size:12px;font-weight:700;color:#dce4f7}.tag-one{top:28px;right:-2px;transform:rotate(5deg)}.tag-two{bottom:24px;left:-4px;transform:rotate(-5deg)}.tag-dot{display:inline-block;width:7px;height:7px;background:#5fe0c1;border-radius:50%;margin-right:7px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.stat{border:1px solid var(--line);background:#ffffff04;border-radius:15px;padding:17px 19px}.stat strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:25px;letter-spacing:-1px}.stat span{color:var(--muted);font-size:12px}
+.tools-section{padding:55px 0 75px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:25px}.kicker{font-size:11px;font-weight:700;letter-spacing:1.7px;color:#9f93ff;text-transform:uppercase;margin-bottom:9px}.section-head h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(28px,4vw,39px);letter-spacing:-1.6px;margin-bottom:7px}.section-head p{color:var(--muted);font-size:14px;margin-bottom:0}.search-wrap{position:relative;width:min(330px,100%);flex-shrink:0}.search-wrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8795b1;width:18px}.search{width:100%;border:1px solid var(--line);background:#10182a;color:white;border-radius:13px;padding:13px 15px 13px 43px;outline:none}.search:focus{border-color:#8b7cff99;box-shadow:0 0 0 3px #8b7cff1c}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:23px}.filter{border:1px solid var(--line);color:#aebbd3;background:#ffffff04;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer}.filter.active,.filter:hover{background:#8b7cff20;color:#d4ceff;border-color:#8b7cff75}
+.tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.tool-card{position:relative;min-width:0;border:1px solid var(--line);border-radius:19px;padding:20px;background:linear-gradient(145deg,#141e33b8,#0d1525c9);transition:transform .22s,border-color .22s,background .22s;display:flex;flex-direction:column;min-height:207px;overflow:hidden}.tool-card:before{content:"";position:absolute;width:130px;height:130px;right:-65px;top:-72px;border-radius:50%;background:var(--glow,#8b7cff);opacity:.09;filter:blur(5px);transition:opacity .2s}.tool-card:hover{transform:translateY(-4px);border-color:#8b7cff66;background:linear-gradient(145deg,#192540,#101a2e)}.tool-card:hover:before{opacity:.2}.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}.tool-icon{width:47px;height:47px;border-radius:14px;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:14px;letter-spacing:-.5px;background:var(--icon-bg,#8b7cff1f);color:var(--icon-color,#b5aaff);border:1px solid var(--icon-border,#8b7cff30)}.category{font-size:10px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:#8998b5}.tool-card h3{font-family:"Space Grotesk",sans-serif;font-size:17px;letter-spacing:-.35px;margin:0 0 7px}.tool-card p{font-size:12px;line-height:1.7;color:#9eacc6;margin:0 0 19px;flex:1}.open-tool{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;color:#c7c0ff;border-top:1px solid var(--line);padding-top:13px}.arrow{font-size:17px;transition:transform .2s}.tool-card:hover .arrow{transform:translateX(4px)}.no-results{display:none;border:1px dashed var(--line);border-radius:16px;padding:34px;text-align:center;color:var(--muted);grid-column:1/-1}
+.bottom-cta{padding:0 0 76px}.cta-box{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:29px 32px;border:1px solid #8b7cff3d;border-radius:22px;background:radial-gradient(ellipse at 95% 20%,#4ddfc01a,transparent 35%),linear-gradient(120deg,#171e39,#111a2b)}.cta-box h2{font-family:"Space Grotesk",sans-serif;font-size:25px;letter-spacing:-.8px;margin:0 0 5px}.cta-box p{font-size:13px;color:var(--muted);margin:0}.cta-box .btn{flex-shrink:0}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#7f8ca6;font-size:12px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{color:#dce3f5;font-family:"Space Grotesk",sans-serif;font-weight:700}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a:hover{color:white}
+
+.ms-logo{font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:700;letter-spacing:-1.4px;text-shadow:0 1px 3px #2e276b66}.tools-controls{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}.tools-controls .filters{flex:1;margin-bottom:15px}.position-controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.position-btn{border:1px solid #8b7cff55;background:#8b7cff16;color:#d4ceff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}.position-btn:hover{background:#8b7cff2b}.secondary-position{border-color:var(--line);background:#ffffff08;color:var(--text)}.position-hint{margin:-5px 0 17px;color:var(--muted);font-size:12px}.tool-card.is-draggable{cursor:grab;outline:1px dashed #8b7cff88;outline-offset:2px}.tool-card.is-dragging{opacity:.42;transform:scale(.98)}.tool-card.drop-target{border-color:#52e0c4;box-shadow:0 0 0 3px #52e0c420}
+
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:15px}.hero-art{min-height:320px;max-width:520px;width:100%;margin:auto}.hero{padding-top:55px}.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:13px}.navlinks a:not(.nav-cta){display:none}}
+@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.nav{height:66px}.brand{font-size:18px}.nav-cta{padding:9px 11px;font-size:12px}.hero{padding:43px 0 25px}h1{font-size:43px;letter-spacing:-2.2px}.hero-copy{font-size:15px}.hero-art{min-height:300px}.orb{width:245px;height:245px}.tool-window{padding:13px}.mini{height:78px}.floating-tag{font-size:10px;padding:9px 10px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.stat span{font-size:10px}.tools-section{padding:40px 0 55px}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.tools-grid{grid-template-columns:1fr;gap:11px}.tool-card{min-height:185px;padding:17px}.cta-box{align-items:flex-start;flex-direction:column;padding:23px}.cta-box h2{font-size:22px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:13px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Advanced software-catalog redesign inspired by clean app marketplaces */
+:root{--bg:#f4f6fb;--panel:#ffffff;--panel2:#eef2f8;--line:#e0e5ef;--text:#182338;--muted:#68758b;--accent:#2864e8;--accent2:#16a58a;--shadow:0 18px 55px rgba(28,45,78,.10)}
+body{background:#f4f6fb;color:var(--text);background-image:radial-gradient(ellipse at 8% 0%,rgba(66,119,235,.09),transparent 34%),radial-gradient(ellipse at 92% 12%,rgba(30,177,149,.08),transparent 27%)}
+header{background:rgba(255,255,255,.9);border-bottom:1px solid #e1e6ef}
+.brand{color:#1a2740;gap:12px}.logo{width:43px;height:43px;flex:0 0 43px;border-radius:14px;background:linear-gradient(145deg,#2563eb 0%,#4f46e5 48%,#0ea5a4 100%);box-shadow:0 8px 20px #315bd52e, inset 0 1px 0 #ffffff70;position:relative;overflow:hidden;border:1px solid #ffffff80}.logo:before{content:"";position:absolute;inset:-14px;background:linear-gradient(135deg,transparent 38%,#ffffff25 39%,#ffffff25 48%,transparent 49%);transform:rotate(10deg)}.logo svg{width:30px;height:30px;position:relative;z-index:1;filter:drop-shadow(0 1px 1px #18295a33)}.brand-name{display:flex;align-items:baseline;gap:0;font-family:"Space Grotesk",sans-serif;font-weight:750;font-size:22px;letter-spacing:-1px}.brand-name .my{color:#17243b}.brand-name em{font-style:normal;background:linear-gradient(100deg,#2864e8,#089e9a);background-clip:text;-webkit-background-clip:text;color:transparent}.brand-tagline{display:block;font-size:9px;letter-spacing:1.65px;text-transform:uppercase;font-weight:750;color:#7c8aa2;margin-top:1px}.brand-copy{display:flex;flex-direction:column;line-height:1.1}body.dark-mode .brand-name .my{color:#eef4ff}body.dark-mode .brand-tagline{color:#91a2bc}
+.navlinks{color:#68758b}.navlinks a:hover{color:#2158c5}.nav-cta{background:#245fdb;color:#fff}.theme-toggle{border:1px solid #dce3ef;background:#fff;color:#34445f;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.hero{padding:56px 0 36px}.eyebrow{border-color:#cbd8f5;background:#eaf0ff;color:#315bb3}.pulse{background:#1eb69a;box-shadow:0 0 0 4px #1eb69a20}
+h1 .grad{background:linear-gradient(95deg,#245fdb,#168fbd 50%,#0b9c7d);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{color:#63718a}.btn-primary{background:linear-gradient(135deg,#3474ed,#2458cf);box-shadow:0 9px 22px #2864e827}.btn-secondary{border-color:#dce3ef;background:#fff;color:#35445d}.hero-note{color:#66758e}.hero-note svg{color:#119e83}
+.hero-art{min-height:330px}.orb{background:linear-gradient(145deg,#4c7eea1b,#27b79b14);border-color:#b9c9ec;box-shadow:inset 0 0 60px #2864e809,0 0 90px #2864e80b}.tool-window{border:1px solid #d9e1ee;border-radius:20px;background:linear-gradient(145deg,#fff,#f6f8fc);box-shadow:0 25px 65px #223d6818;transform:rotate(1deg)}.window-top{border-color:#e5eaf2}.dots i{background:#b5c0d2}.window-label{color:#687b99}.mini{border-color:#e1e7f0;background:#fff;border-radius:13px}.mini small{color:#53627b}.floating-tag{border-color:#dce4f0;background:#fff;color:#30415e;box-shadow:0 12px 30px #23395d12}
+.stat{border-color:#e0e6f0;background:#fff;box-shadow:0 5px 18px #23395d06}.stat span{color:#6c7890}
+.kicker{color:#2a63d7}.section-head p{color:#6b7890}.search{background:#fff;color:#182338;border-color:#dce3ef}.search:focus{border-color:#4c7eea;box-shadow:0 0 0 3px #2864e817}.filter{color:#5c6b84;background:#fff;border-color:#dfe5ef}.filter.active,.filter:hover{background:#eaf0ff;color:#2458c9;border-color:#b9cdf8}
+.tools-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.tool-card{border-color:#e0e6ef;border-radius:17px;padding:18px;background:#fff;box-shadow:0 5px 18px rgba(28,45,78,.045);min-height:205px}.tool-card:before{width:105px;height:105px;right:-55px;top:-55px;opacity:.06}.tool-card:hover{transform:translateY(-5px);border-color:#a8bff1;background:#fff;box-shadow:0 14px 30px rgba(28,64,125,.11)}.tool-icon{width:50px;height:50px;border-radius:15px;font-size:15px;box-shadow:inset 0 0 0 1px #ffffff88}.category{color:#78859a}.tool-card h3{color:#1b2941;font-size:16px}.tool-card p{color:#6b7890}.open-tool{color:#285fcf;border-color:#edf0f5}
+.cta-box{border-color:#cbd8f4;background:radial-gradient(ellipse at 95% 20%,#25b79b14,transparent 35%),linear-gradient(120deg,#fff,#edf3ff);box-shadow:0 12px 35px #23395d0a}.cta-box p{color:#68758b}footer{border-color:#e0e6ef;color:#77839a}.footer-brand{color:#263752}
+body.dark-mode{--bg:#0b1220;--panel:#121d30;--panel2:#17243a;--line:#27364d;--text:#edf3ff;--muted:#9aa9c0;--shadow:0 24px 70px rgba(0,0,0,.3);background:#0b1220;background-image:radial-gradient(ellipse at 8% 0%,rgba(70,100,220,.18),transparent 35%),radial-gradient(ellipse at 92% 12%,rgba(30,177,149,.08),transparent 27%);color:var(--text)}
+body.dark-mode header{background:rgba(11,18,32,.9);border-color:#27364d}body.dark-mode .brand{color:#edf3ff}body.dark-mode .navlinks{color:#a8b5ca}body.dark-mode .theme-toggle,body.dark-mode .btn-secondary,body.dark-mode .search,body.dark-mode .filter{background:#121d30;color:#dce7fa;border-color:#2b3b55}body.dark-mode .nav-cta{background:#e9efff;color:#17213a}body.dark-mode .eyebrow{background:#1c2442;color:#c6d1ff;border-color:#3b4674}body.dark-mode .hero-copy,body.dark-mode .hero-note,body.dark-mode .section-head p,body.dark-mode .stat span,body.dark-mode .tool-card p,body.dark-mode .cta-box p{color:#a1b0c8}body.dark-mode .orb{background:linear-gradient(145deg,#7565fa28,#38d9be0e);border-color:#3b4770}body.dark-mode .tool-window{background:linear-gradient(145deg,#17233a,#101a2b);border-color:#2d3b54}body.dark-mode .window-top,body.dark-mode .mini,body.dark-mode .stat,body.dark-mode .tool-card,body.dark-mode .cta-box{background:#121d30;border-color:#2a3952}body.dark-mode .window-label,body.dark-mode .mini small,body.dark-mode .category{color:#9eacc5}body.dark-mode .floating-tag{background:#18243a;border-color:#2a3a55;color:#dce7fa}body.dark-mode .tool-card h3,body.dark-mode .footer-brand{color:#edf3ff}body.dark-mode .tool-card:hover{background:#17243a;border-color:#526da7}body.dark-mode .open-tool{border-color:#293952;color:#b9c9ff}body.dark-mode footer{border-color:#27364d;color:#8d9bb3}body.dark-mode .bottom-cta .cta-box{background:linear-gradient(120deg,#17213a,#111d2e)}
+@media(max-width:1000px){.tools-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.ms-logo{font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:700;letter-spacing:-1.4px;text-shadow:0 1px 3px #2e276b66}.tools-controls{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}.tools-controls .filters{flex:1;margin-bottom:15px}.position-controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.position-btn{border:1px solid #8b7cff55;background:#8b7cff16;color:#d4ceff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}.position-btn:hover{background:#8b7cff2b}.secondary-position{border-color:var(--line);background:#ffffff08;color:var(--text)}.position-hint{margin:-5px 0 17px;color:var(--muted);font-size:12px}.tool-card.is-draggable{cursor:grab;outline:1px dashed #8b7cff88;outline-offset:2px}.tool-card.is-dragging{opacity:.42;transform:scale(.98)}.tool-card.drop-target{border-color:#52e0c4;box-shadow:0 0 0 3px #52e0c420}
+
+@media(max-width:850px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-toggle{padding:8px 9px}}
+@media(max-width:560px){.tools-grid{grid-template-columns:1fr}.navlinks{gap:8px}.theme-toggle{font-size:11px;padding:8px}.hero{padding-top:42px}}
+
+
+/* Real website logos in each tool card */
+.tool-icon{overflow:hidden;flex:0 0 50px;padding:7px;background:#e8efff;border:1px solid #d8e3fa;box-shadow:0 3px 10px rgba(20,40,80,.07);transition:transform .2s,box-shadow .2s}
+.tool-icon svg{display:block;width:28px;height:28px;transition:transform .2s}
+.tool-card:hover .tool-icon{transform:translateY(-2px) scale(1.04);box-shadow:0 7px 16px rgba(20,40,80,.12)}
+.featured-icon svg{width:38px;height:38px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+body.dark-mode .tool-icon{box-shadow:none}
+
+.ms-logo{font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:700;letter-spacing:-1.4px;text-shadow:0 1px 3px #2e276b66}.tools-controls{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}.tools-controls .filters{flex:1;margin-bottom:15px}.position-controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.position-btn{border:1px solid #8b7cff55;background:#8b7cff16;color:#d4ceff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}.position-btn:hover{background:#8b7cff2b}.secondary-position{border-color:var(--line);background:#ffffff08;color:var(--text)}.position-hint{margin:-5px 0 17px;color:var(--muted);font-size:12px}.tool-card.is-draggable{cursor:grab;outline:1px dashed #8b7cff88;outline-offset:2px}.tool-card.is-dragging{opacity:.42;transform:scale(.98)}.tool-card.drop-target{border-color:#52e0c4;box-shadow:0 0 0 3px #52e0c420}
+
+@media(max-width:850px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.tools-grid{grid-template-columns:1fr}}
+
+/* Dynamic featured-tool carousel */
+.section-head h2{display:flex;flex-wrap:wrap;gap:.22em;align-items:baseline}
+.rotating-heading{display:inline-block;min-width:5ch;color:#2464d9;background:linear-gradient(100deg,#2866e4,#0b9c83);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;transition:opacity .25s,transform .25s}
+.rotating-heading.changing{opacity:0;transform:translateY(7px)}
+.heading-dot{margin-left:-.2em}
+.featured-tool{position:relative;isolation:isolate;display:flex;align-items:center;gap:18px;min-height:138px;margin:0 0 25px;padding:23px 22px;border:1px solid #dce5f2;border-radius:20px;overflow:hidden;background:linear-gradient(110deg,#fff 0%,#f6f9ff 62%,#eaf8f5 100%);box-shadow:0 12px 34px rgba(35,66,117,.07);transition:opacity .25s,transform .25s}
+.featured-tool.switching{opacity:.55;transform:translateY(3px)}
+.featured-glow{position:absolute;z-index:-1;width:230px;height:230px;right:18%;top:-150px;border-radius:50%;background:#5a8df6;filter:blur(65px);opacity:.18}
+.featured-icon{flex:0 0 66px;width:66px;height:66px;display:grid;place-items:center;border-radius:19px;background:#e8efff;color:#245fce;font-weight:800;font-size:17px;overflow:hidden;border:1px solid #d8e3fa}
+.featured-icon img{width:38px;height:38px;object-fit:contain}
+.featured-copy{flex:1;min-width:0}.featured-label{display:flex;align-items:center;gap:8px;color:#72809a;font-size:10px;font-weight:800;letter-spacing:1.2px;margin-bottom:7px}.featured-label span:last-child{letter-spacing:.4px;padding:4px 7px;border-radius:6px;background:#e9effb;color:#536a91}.live-dot{width:7px;height:7px;background:#17b89a;border-radius:50%;box-shadow:0 0 0 4px #17b89a20}.featured-copy h3{font-size:21px;letter-spacing:-.5px;margin:0 0 5px;color:#1c2b43}.featured-copy p{font-size:12px;color:#6c7b93;margin:0;line-height:1.6}.featured-open{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;padding:12px 15px;border-radius:11px;background:#2864dc;color:#fff;font-size:12px;font-weight:750;box-shadow:0 8px 18px #2864dc24}.featured-open span{font-size:16px}.featured-controls{display:flex;gap:5px;margin-left:0}.featured-controls button{width:32px;height:32px;border-radius:9px;border:1px solid #dce4f0;background:#fff;color:#3d5273;font-size:20px;cursor:pointer}.featured-controls button:hover{background:#eaf0ff;border-color:#b7c9ef}
+body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff,#64e2ca)}body.dark-mode .featured-tool{background:linear-gradient(110deg,#121d30,#17233a 62%,#122d31);border-color:#2a3b55;box-shadow:0 12px 34px #0002}body.dark-mode .featured-copy h3{color:#edf3ff}body.dark-mode .featured-copy p,body.dark-mode .featured-label{color:#a4b2c8}body.dark-mode .featured-label span:last-child{background:#263653;color:#c5d5f2}body.dark-mode .featured-icon{background:#202e49;border-color:#354867;color:#bdd0ff}body.dark-mode .featured-controls button{background:#18243a;border-color:#30415c;color:#dbe7fc}body.dark-mode .featured-controls button:hover{background:#263858}
+@media(max-width:760px){.featured-tool{flex-wrap:wrap;padding:18px;gap:13px}.featured-copy{min-width:calc(100% - 85px)}.featured-open{margin-left:79px}.featured-controls{margin-left:auto}.featured-copy h3{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.rotating-heading,.featured-tool{transition:none}}
+
+</style>
+
+<style id="custom-brand-like-icons">
+.tool-icon.custom-brand-icon {
+  display:flex !important; align-items:center; justify-content:center;
+  overflow:hidden; background:#fff !important; border:1px solid #e5e7eb !important;
+  border-radius:12px !important; padding:7px !important; box-sizing:border-box;
+}
+.tool-icon.custom-brand-icon svg { width:100%; height:100%; max-width:38px; max-height:38px; display:block; }
+#featuredIcon.custom-brand-icon { background:#fff !important; border:1px solid #e5e7eb !important; }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="MySoftwere home">
+      <span class="logo" aria-label="MySoftwere logo"><svg viewBox="0 0 40 40" role="img" aria-label="MS"><path d="M6 29V11.5c0-1.4 1.8-2 2.7-.9L17 22l8.3-11.4c.9-1.2 2.7-.5 2.7.9V29" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 13.5c-2-2.2-8-2.5-8 1.2 0 3.2 7.6 2.4 7.6 6.7 0 4.2-5.4 5.7-9.1 2.8" fill="none" stroke="#bdfdf0" stroke-width="3.2" stroke-linecap="round"/></svg></span>
+      <span class="brand-copy"><span class="brand-name"><span class="my">My</span><em>Softwere</em></span><span class="brand-tagline">Tools for smarter work</span></span>
+    </a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#tools">All tools</a><a href="#about">About</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">☼ Light mode</button><a class="nav-cta" href="#tools">Explore tools ↗</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="tools-section" id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">THE TOOLBOX</div><h2><span class="heading-static">Find the right </span><span id="rotatingHeading" class="rotating-heading">HTML tool</span><span class="heading-dot">.</span></h2><p>Discover useful software and web tools, one smart pick at a time.</p></div>
+      <label class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="search" id="toolSearch" type="search" placeholder="Search tools..." aria-label="Search tools"></label>
+    </div>
+    <section class="featured-tool" aria-label="Featured tool of the moment" aria-live="polite">
+      <div class="featured-glow"></div>
+      <div class="featured-icon" id="featuredIcon">&lt;/&gt;</div>
+      <div class="featured-copy"><div class="featured-label"><span class="live-dot"></span> FEATURED TOOL <span id="featuredCount">01 / 25</span></div><h3 id="featuredName">HTML Make</h3><p id="featuredDescription">A useful tool from your collection, selected automatically every 3 seconds.</p></div>
+      <a class="featured-open" id="featuredLink" href="https://mysoftwere.github.io/htmlmake" target="_blank" rel="noopener noreferrer">Open featured tool <span>↗</span></a>
+      <div class="featured-controls"><button type="button" id="featuredPrev" aria-label="Previous featured tool">‹</button><button type="button" id="featuredPause" aria-label="Pause automatic featured tool rotation">Ⅱ</button><button type="button" id="featuredNext" aria-label="Next featured tool">›</button></div>
+    </section>
+    <div class="tools-controls"><div class="filters" id="categories" aria-label="Filter tools">
+      <button class="filter active" data-filter="all">All tools <span>(25)</span></button>
+      <button class="filter" data-filter="html">HTML & Code</button>
+      <button class="filter" data-filter="pdf">PDF</button>
+      <button class="filter" data-filter="url">URL & Links</button>
+      <button class="filter" data-filter="text">Text & Notes</button>
+      <button class="filter" data-filter="seo">SEO</button>
+      <button class="filter" data-filter="productivity">Websites & Productivity</button>
+    </div><div class="position-controls"><button type="button" class="position-btn" id="editPositions" aria-pressed="false">↕ Change positions</button><button type="button" class="position-btn secondary-position" id="savePositions" hidden>Save order</button><button type="button" class="position-btn secondary-position" id="resetPositions" hidden>Reset</button></div></div>
+    <p class="position-hint" id="positionHint" hidden>Drag software cards to change their order, then press “Save order”. This order is saved in this browser.</p>
+    <div class="tools-grid" id="toolsGrid">
+      <a class="tool-card" data-category="html" data-name="HTML Make HTML code builder editor" href="https://mysoftwere.github.io/htmlmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Make</h3><p>Create and work with HTML content using your HTML-making tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="pdf" data-name="PDF Make PDF maker generator" href="https://mysoftwere.github.io/pdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make</h3><p>Open your PDF-making tool and create PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="pdf" data-name="Old PDF Make classic pdf maker" href="https://mysoftwere.github.io/oldpdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="files" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>Old PDF Make</h3><p>Access the classic version of your PDF maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlcvter" href="https://mysoftwere.github.io/bulkurlcvter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter</h3><p>Work with multiple URLs in one place using this converter.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="html" data-name="HTML Makee HTML builder" href="https://mysoftwere.github.io/htmlmakee" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Makee</h3><p>Another HTML creation tool from your collection.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="html" data-name="HTML New Make new html builder" href="https://mysoftwere.github.io/htmlnewmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="file-code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML New Make</h3><p>Open the newer version of your HTML maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="pdf" data-name="PDF Title Editor pdftotitel" href="https://mysoftwere.github.io/pdftotitel" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pen" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Title Editor</h3><p>Open your tool for working with PDF title information.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="html" data-name="HTML File Downloader htmlfiledownlod" href="https://mysoftwere.github.io/htmlfiledownlod" target="_blank" rel="noopener noreferrer" style="--icon-bg:#5baeff1d;--icon-color:#8cc8ff;--icon-border:#5baeff38;--glow:#5baeff"><div class="card-top"><span class="tool-icon" data-icon="download" data-icon-bg="#eaf5ff" data-icon-color="#2877c7" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML File Downloader</h3><p>Access your HTML file downloading utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="text" data-name="Notepad text notes editor" href="https://mysoftwere.github.io/notepad" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b"><div class="card-top"><span class="tool-icon" data-icon="notebook" data-icon-bg="#fff6df" data-icon-color="#b77912" aria-hidden="true"></span><span class="category">Text & Notes</span></div><h3>Notepad</h3><p>Quickly open your simple text and note-taking tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="url" data-name="Link2F link to file link tool" href="https://mysoftwere.github.io/link2f" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link-2" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Link2F</h3><p>Open your Link2F utility for link-related tasks.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="Sitemap Generator sitemap SEO" href="https://mysoftwere.github.io/sitemap" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="network" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">SEO</span></div><h3>Sitemap Generator</h3><p>Access your sitemap tool for website SEO workflows.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlconverter" href="https://mysoftwere.github.io/bulkurlconverter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="git-compare" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter Pro</h3><p>Open the alternate Bulk URL Converter version.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="html" data-name="Title Change HTML titelchtml title changer" href="https://mysoftwere.github.io/titelchtml" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>Title Change HTML</h3><p>Open your HTML title-changing utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+
+      <a class="tool-card" data-category="text" data-name="base64 encoder / decoder" href="https://www.base64encode.org/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b"><div class="card-top"><span class="tool-icon" data-icon="binary" data-icon-bg="#fff6df" data-icon-color="#b77912" aria-hidden="true"></span><span class="category">Text</span></div><h3>Base64 Encoder / Decoder</h3><p>Encode or decode text with Base64.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="rocket indexer" href="https://rocketindexer.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="rocket" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Rocket Indexer</h3><p>Open Rocket Indexer for URL indexing workflows.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="crawlme" href="https://crawlme.net/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="scan-search" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>CrawlMe</h3><p>Visit CrawlMe for website crawling and indexing tasks.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="gooindex" href="https://gooindex.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="search-check" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>GooIndex</h3><p>Open GooIndex for URL indexing services.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="productivity" data-name="imdb" href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="clapperboard" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>IMDb</h3><p>Explore movies, TV shows and entertainment information.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="productivity" data-name="espn india" href="https://www.espn.in/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="trophy" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>ESPN India</h3><p>Sports news, scores and coverage from ESPN India.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="productivity" data-name="mailmeteor" href="https://mailmeteor.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="mail" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>Mailmeteor</h3><p>Explore email productivity and mail merge tools.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="google trends" href="https://trends.google.com/trends/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Google Trends</h3><p>Explore search interest and trending topics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="productivity" data-name="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="bot" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>ChatGPT</h3><p>Open ChatGPT for AI assistance.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="wpcnt" href="https://www.wpcnt.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="chart" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>WPCNT</h3><p>Open WPCNT website.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="productivity" data-name="mohmal temporary inbox" href="https://www.mohmal.com/en/inbox" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="mail-open" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>Mohmal Temporary Inbox</h3><p>Open Mohmal temporary email inbox.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="seo" data-name="histats" href="https://www.histats.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Histats</h3><p>Open Histats website statistics and visitor analytics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+    </div>
+    <div class="no-results" id="noResults">No tools match your search. Try another keyword or category.</div>
+  </div>
+</section>
+<section class="bottom-cta" id="about"><div class="wrap"><div class="cta-box"><div><h2>Your toolkit, all in one place.</h2><p>Bookmark MySoftwere and come back whenever you need a quick online tool.</p></div><a class="btn btn-primary" href="#tools">Browse the collection <span>↗</span></a></div></div></section>
+</main>
+<footer><div class="wrap footer-row"><div><span class="footer-brand">MySoftwere</span><span> &nbsp;·&nbsp; Useful tools, simpler work.</span></div><div class="footer-links"><a href="#tools">All tools</a><a href="https://github.com/mysoftwere" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#about">About</a></div><div>© <span id="year"></span> MySoftwere</div></div></footer>
+<script>
+(() => {
+  const search = document.getElementById('toolSearch');
+  const cards = [...document.querySelectorAll('.tool-card')];
+  const filters = [...document.querySelectorAll('.filter')];
+  const empty = document.getElementById('noResults');
+  let active = 'all';
+  function update() {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(card => {
+      const matchCategory = active === 'all' || card.dataset.category === active;
+      const matchText = (card.dataset.name + ' ' + card.innerText).toLowerCase().includes(query);
+      const show = matchCategory && matchText;
+      card.style.display = show ? 'flex' : 'none';
+      if (show) visible++;
+    });
+    empty.style.display = visible ? 'none' : 'block';
+  }
+  filters.forEach(button => button.addEventListener('click', () => {
+    active = button.dataset.filter;
+    filters.forEach(item => item.classList.toggle('active', item === button));
+    update();
+  }));
+  search.addEventListener('input', update);
+  const themeToggle = document.getElementById('themeToggle');
+  function setTheme(dark){document.body.classList.toggle('dark-mode',dark);themeToggle.textContent=dark?'☾ Dark mode':'☼ Light mode';themeToggle.setAttribute('aria-pressed',String(dark));}
+  setTheme(false);
+  themeToggle.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark-mode')));
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
+
+
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('#toolsGrid .tool-card')];
+  const heading = document.getElementById('rotatingHeading');
+  const panel = document.querySelector('.featured-tool');
+  const icon = document.getElementById('featuredIcon');
+  const name = document.getElementById('featuredName');
+  const desc = document.getElementById('featuredDescription');
+  const count = document.getElementById('featuredCount');
+  const link = document.getElementById('featuredLink');
+  const pause = document.getElementById('featuredPause');
+  if (!cards.length || !panel) return;
+  let index = 0, timer = null, paused = false;
+  const headingWords = ['HTML tools','PDF tools','SEO tools','URL tools','AI tools','Productivity'];
+  let headingIndex = 0;
+  function showTool(nextIndex) {
+    index = (nextIndex + cards.length) % cards.length;
+    const card = cards[index];
+    panel.classList.add('switching');
+    window.setTimeout(() => {
+      const originalIcon = card.querySelector('.tool-icon');
+      const image = originalIcon && originalIcon.querySelector('img');
+      icon.replaceChildren();
+      if (image && image.src) { const img = document.createElement('img'); img.src = image.src; img.alt = ''; img.onerror = () => { icon.textContent = originalIcon.textContent.trim() || '★'; }; icon.appendChild(img); }
+      else icon.textContent = originalIcon ? originalIcon.textContent.trim() : '★';
+      name.textContent = card.querySelector('h3')?.textContent.trim() || 'Featured tool';
+      desc.textContent = card.querySelector('p')?.textContent.trim() || 'Open this tool from your collection.';
+      link.href = card.href;
+      count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(cards.length).padStart(2,'0');
+      panel.classList.remove('switching');
+    }, 180);
+  }
+  function showHeading() {
+    heading?.classList.add('changing');
+    window.setTimeout(() => {
+      if (heading) { headingIndex = (headingIndex + 1) % headingWords.length; heading.textContent = headingWords[headingIndex]; heading.classList.remove('changing'); }
+    }, 220);
+  }
+  function start(){ if(timer) clearInterval(timer); timer = window.setInterval(() => { if(!paused){showTool(index+1);showHeading();} }, 3000); }
+  document.getElementById('featuredPrev')?.addEventListener('click',()=>{showTool(index-1);start();});
+  document.getElementById('featuredNext')?.addEventListener('click',()=>{showTool(index+1);start();});
+  pause?.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'▶':'Ⅱ';pause.setAttribute('aria-label',paused?'Resume automatic featured tool rotation':'Pause automatic featured tool rotation');});
+  showTool(0); start();
+})();
+</script>
+
+
+<script>
+(() => {
+  const grid = document.getElementById('toolsGrid');
+  const editBtn = document.getElementById('editPositions');
+  const saveBtn = document.getElementById('savePositions');
+  const resetBtn = document.getElementById('resetPositions');
+  const hint = document.getElementById('positionHint');
+  if (!grid || !editBtn) return;
+  const storageKey = 'mysoftwere_tool_order_v1';
+  let editing = false, dragged = null;
+  const initialOrder = [...grid.querySelectorAll('.tool-card')].map(card => card.href);
+  function cards(){ return [...grid.querySelectorAll('.tool-card')]; }
+  function applySavedOrder(order){
+    if(!Array.isArray(order)) return;
+    const map = new Map(cards().map(card => [card.href, card]));
+    order.forEach(url => { const card = map.get(url); if(card){grid.appendChild(card);map.delete(url);} });
+    map.forEach(card => grid.appendChild(card));
+  }
+  try { const saved = JSON.parse(localStorage.getItem(storageKey) || 'null'); if(saved) applySavedOrder(saved); } catch(e){}
+  function setEditing(value){
+    editing = value;
+    editBtn.setAttribute('aria-pressed', String(value));
+    editBtn.textContent = value ? '✓ Editing positions' : '↕ Change positions';
+    saveBtn.hidden = !value; resetBtn.hidden = !value; hint.hidden = !value;
+    cards().forEach(card => { card.draggable = value; card.classList.toggle('is-draggable', value); });
+  }
+  editBtn.addEventListener('click', () => setEditing(!editing));
+  grid.addEventListener('dragstart', e => {
+    if(!editing) { e.preventDefault(); return; }
+    const card = e.target.closest('.tool-card'); if(!card) return;
+    dragged = card; card.classList.add('is-dragging');
+    if(e.dataTransfer){e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',card.href);}
+  });
+  grid.addEventListener('dragover', e => {
+    if(!editing || !dragged) return;
+    e.preventDefault();
+    const target = e.target.closest('.tool-card');
+    cards().forEach(c=>c.classList.toggle('drop-target',c===target && c!==dragged));
+    if(target && target!==dragged){
+      const r=target.getBoundingClientRect();
+      const after=(e.clientY-r.top)>r.height/2;
+      if(after){ if(target.nextSibling!==dragged) grid.insertBefore(dragged,target.nextSibling); }
+      else if(target!==dragged.previousSibling) grid.insertBefore(dragged,target);
+    }
+  });
+  grid.addEventListener('drop', e => { if(editing){e.preventDefault();cards().forEach(c=>c.classList.remove('drop-target'));} });
+  grid.addEventListener('dragend', () => { dragged=null; cards().forEach(c=>c.classList.remove('is-dragging','drop-target')); });
+  saveBtn.addEventListener('click', () => {
+    try { localStorage.setItem(storageKey, JSON.stringify(cards().map(card=>card.href))); }
+    catch(e){ alert('Could not save the order in this browser.'); return; }
+    setEditing(false);
+    const old=saveBtn.textContent; saveBtn.textContent='Saved ✓'; window.setTimeout(()=>saveBtn.textContent=old,1400);
+  });
+  resetBtn.addEventListener('click', () => {
+    applySavedOrder(initialOrder);
+    try{localStorage.removeItem(storageKey);}catch(e){}
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+ const paths = {"code": "<path d=\"m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16\"/>", "file-pdf": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M8 15h2a1.5 1.5 0 0 1 0 3H8v-5M14 18v-5h1a2.5 2.5 0 0 1 0 5z\"/>", "files": "<path d=\"M15 2H6a2 2 0 0 0-2 2v14\"/><path d=\"M18 8H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V10z\"/>", "link": "<path d=\"M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7\"/><path d=\"M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7\"/>", "file-code": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M10 13l-2 2 2 2M14 13l2 2-2 2\"/>", "file-pen": "<path d=\"M12 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v4\"/><path d=\"M14 2v6h6M18 16l3-3 2 2-3 3-4 1z\"/>", "download": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5M12 15V3\"/>", "notebook": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"/><path d=\"M8 7h8M8 11h8\"/>", "link-2": "<path d=\"M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7\"/><path d=\"M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7\"/>", "network": "<rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 8v4M5 16v-4h14v4\"/>", "git-compare": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"18\" r=\"3\"/><path d=\"M6 9v8a4 4 0 0 0 4 4h5M18 15V7a4 4 0 0 0-4-4H9\"/>", "type": "<path d=\"M4 7V4h16v3M9 20h6M12 4v16\"/>", "binary": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>", "rocket": "<path d=\"M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z\"/><path d=\"m12 15-3-3a22 22 0 0 1 3-5c3-3 7-4 9-4 0 2-1 6-4 9a22 22 0 0 1-5 3z\"/>", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2\"/><circle cx=\"10.5\" cy=\"10.5\" r=\"3.5\"/><path d=\"m13 13 4 4\"/>", "search-check": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4M8 10l2 2 4-4\"/>", "clapperboard": "<path d=\"M4 4h16v16H4z\"/><path d=\"m4 9 16-5M9 4l3 5M16 4l3 5\"/>", "trophy": "<path d=\"M8 4h8v5a4 4 0 0 1-8 0zM12 13v6M8 21h8M8 6H3v2a4 4 0 0 0 4 4M16 6h5v2a4 4 0 0 1-4 4\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/>", "trend": "<path d=\"M3 3v18h18\"/><path d=\"m7 14 4-4 4 4 6-7\"/>", "bot": "<rect x=\"4\" y=\"8\" width=\"16\" height=\"12\" rx=\"2\"/><path d=\"M12 4v4M9 13h.01M15 13h.01M9 17h6M2 12v4M22 12v4\"/>", "chart": "<path d=\"M3 3v18h18\"/><rect x=\"7\" y=\"12\" width=\"3\" height=\"6\" rx=\"1\"/><rect x=\"13\" y=\"8\" width=\"3\" height=\"10\" rx=\"1\"/><rect x=\"19\" y=\"5\" width=\"2\" height=\"13\" rx=\"1\"/>", "mail-open": "<path d=\"m3 9 9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"m3 9 9 6 9-6\"/>"};
+ document.querySelectorAll('.tool-card .tool-icon').forEach(el => {
+   const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+   svg.setAttribute('viewBox','0 0 24 24'); svg.setAttribute('width','28'); svg.setAttribute('height','28');
+   svg.setAttribute('fill','none'); svg.setAttribute('stroke','currentColor'); svg.setAttribute('stroke-width','1.8');
+   svg.setAttribute('stroke-linecap','round'); svg.setAttribute('stroke-linejoin','round'); svg.setAttribute('aria-hidden','true');
+   svg.innerHTML = paths[el.dataset.icon] || paths.code; el.appendChild(svg);
+   el.style.background = el.dataset.iconBg || '#e8efff';
+   el.style.color = el.dataset.iconColor || '#245fce';
+   el.style.borderColor = (el.dataset.iconColor || '#245fce') + '35';
+ });
+ const featured = document.getElementById('featuredIcon');
+ if (featured) { featured.style.background='#e8efff'; featured.style.color='#245fce'; }
+})();
+</script>
+
+
+<script id="embedded-custom-brand-like-icons">
+(() => {
+  const icons = {
+    "base64encode.org": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#eaf2ff"/><path d="M11 15h17a6 6 0 0 1 0 12H11z" fill="#2563eb"/><path d="M37 33H20a6 6 0 0 1 0-12h17z" fill="#60a5fa"/><path d="M15 19h11M22 29h11" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    "rocketindexer.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#fff1e7"/><path d="M28 8c7 1 11 5 12 12l-12 13-9-9z" fill="#f97316"/><path d="M19 24 12 26l-4 8 11-2M25 31l-2 8 8-5 2-8" fill="#fb923c"/><circle cx="31" cy="17" r="3" fill="#fff"/><path d="M15 35l-5 5 8-1" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    "crawlme.net": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#e9fbf4"/><circle cx="24" cy="22" r="10" fill="#10b981"/><circle cx="20" cy="20" r="2" fill="#fff"/><circle cx="28" cy="20" r="2" fill="#fff"/><path d="M19 26q5 4 10 0M14 15l-5-4m25 4 5-4M14 29l-5 4m25-4 5 4" stroke="#047857" stroke-width="2.5" stroke-linecap="round"/><path d="M24 12V7m-4 0h8" stroke="#047857" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    "gooindex.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#ecfdf5"/><circle cx="21" cy="21" r="11" fill="none" stroke="#16a34a" stroke-width="5"/><path d="m29 29 9 9" stroke="#15803d" stroke-width="5" stroke-linecap="round"/><path d="M16 21h10M21 16v10" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    "imdb.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="7" width="44" height="34" rx="5" fill="#f5c518"/><text x="24" y="29" text-anchor="middle" font-size="17" font-weight="900" font-family="Arial,sans-serif" fill="#111">IMDb</text></svg>`,
+    "espn.in": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#fff"/><path d="M8 16h32l-3 5H14l-2 3h22l-3 5H10l-2 5h29l3-5H18l2-3h14l3-5H13z" fill="#e11d2e"/><path d="M9 13h31" stroke="#e11d2e" stroke-width="3"/></svg>`,
+    "mailmeteor.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#eef2ff"/><rect x="8" y="13" width="32" height="23" rx="4" fill="#4f46e5"/><path d="m10 16 14 11 14-11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="m31 8 3-4m2 7 5-1" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    "trends.google.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#fff"/><path d="M9 36V12" stroke="#9ca3af" stroke-width="2"/><path d="M9 36h31" stroke="#9ca3af" stroke-width="2"/><path d="m12 29 8-8 7 4 11-13" fill="none" stroke="#4285f4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="12" r="3" fill="#34a853"/></svg>`,
+    "chatgpt.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e6f6f1"/><g fill="none" stroke="#0d8b72" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10a8 8 0 0 1 14 5 8 8 0 0 1-2 14"/><path d="M38 15a8 8 0 0 1-2 14 8 8 0 0 1-11 7"/><path d="M36 29a8 8 0 0 1-11 7 8 8 0 0 1-13-7"/><path d="M25 36a8 8 0 0 1-13-7 8 8 0 0 1 2-14"/><path d="M12 29a8 8 0 0 1 2-14 8 8 0 0 1 11-7"/><path d="M14 15a8 8 0 0 1 11-7 8 8 0 0 1 13 7"/><path d="m17 17 14 8M31 17 17 25"/></g></svg>`,
+    "wpcnt.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#eff6ff"/><rect x="8" y="25" width="6" height="14" rx="2" fill="#2563eb"/><rect x="18" y="18" width="6" height="21" rx="2" fill="#3b82f6"/><rect x="28" y="11" width="6" height="28" rx="2" fill="#60a5fa"/><path d="m8 18 10-6 10 2 11-8" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    "mohmal.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#fff7ed"/><rect x="7" y="13" width="34" height="23" rx="4" fill="#f97316"/><path d="m9 16 15 12 15-12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 9h8" stroke="#fb923c" stroke-width="3" stroke-linecap="round"/></svg>`,
+    "histats.com": `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#f5f3ff"/><path d="M8 37h32" stroke="#c4b5fd" stroke-width="2"/><rect x="10" y="25" width="6" height="12" rx="2" fill="#7c3aed"/><rect x="21" y="17" width="6" height="20" rx="2" fill="#8b5cf6"/><rect x="32" y="9" width="6" height="28" rx="2" fill="#a78bfa"/><path d="m10 19 11-7 11 2 7-6" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  };
+
+  const aliases = {
+    "base64encode.org": ["base64encode.org", "www.base64encode.org"],
+    "rocketindexer.com": ["rocketindexer.com", "www.rocketindexer.com"],
+    "crawlme.net": ["crawlme.net", "www.crawlme.net"],
+    "gooindex.com": ["gooindex.com", "www.gooindex.com"],
+    "imdb.com": ["imdb.com", "www.imdb.com"],
+    "espn.in": ["espn.in", "www.espn.in"],
+    "mailmeteor.com": ["mailmeteor.com", "www.mailmeteor.com"],
+    "trends.google.com": ["trends.google.com"],
+    "chatgpt.com": ["chatgpt.com", "www.chatgpt.com"],
+    "wpcnt.com": ["wpcnt.com", "www.wpcnt.com"],
+    "mohmal.com": ["mohmal.com", "www.mohmal.com"],
+    "histats.com": ["histats.com", "www.histats.com"]
+  };
+  const byHost = {};
+  Object.keys(icons).forEach(key => (aliases[key] || [key]).forEach(host => byHost[host] = icons[key]));
+
+  function iconForHref(href) {
+    try {
+      const host = new URL(href, window.location.href).hostname.toLowerCase();
+      return byHost[host] || byHost[host.replace(/^www\./, "")] || null;
+    } catch (_) { return null; }
+  }
+  function setIcon(el, href) {
+    if (!el) return;
+    const svg = iconForHref(href);
+    if (!svg) return;
+    el.innerHTML = svg;
+    el.classList.add("custom-brand-icon");
+  }
+  function updateCards() {
+    document.querySelectorAll("#toolsGrid .tool-card").forEach(card => {
+      setIcon(card.querySelector(".tool-icon"), card.getAttribute("href") || card.querySelector("a")?.href || "");
+    });
+  }
+  function updateFeatured() {
+    const icon = document.getElementById("featuredIcon");
+    const link = document.getElementById("featuredLink");
+    if (icon && link) setIcon(icon, link.getAttribute("href") || "");
+  }
+  function init() {
+    updateCards();
+    updateFeatured();
+    const grid = document.getElementById("toolsGrid");
+    if (grid) new MutationObserver(updateCards).observe(grid, {childList:true, subtree:true});
+    const link = document.getElementById("featuredLink");
+    if (link) new MutationObserver(updateFeatured).observe(link, {attributes:true, attributeFilter:["href"]});
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+
+<script id="featured-icon-fallback-fix">
+(() => {
+  const genericIcon = `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="2" width="42" height="44" rx="9" fill="#fee2e2"/><path d="M14 8h14l8 8v24H14z" fill="#fff" stroke="#dc2626" stroke-width="2"/><path d="M28 8v9h8" fill="none" stroke="#dc2626" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="900" fill="#dc2626">PDF</text></svg>`;
+  function ensureFeaturedIcon() {
+    const icon = document.getElementById("featuredIcon");
+    const link = document.getElementById("featuredLink");
+    if (!icon) return;
+    const href = link ? (link.getAttribute("href") || "") : "";
+    // Keep the designed brand-like SVG if one is available; otherwise show a PDF/tool fallback.
+    let hasVisibleSvg = !!icon.querySelector("svg");
+    if (!hasVisibleSvg) {
+      icon.innerHTML = genericIcon;
+      icon.classList.add("custom-brand-icon");
+    }
+  }
+  function init() {
+    ensureFeaturedIcon();
+    const icon = document.getElementById("featuredIcon");
+    if (icon) new MutationObserver(ensureFeaturedIcon).observe(icon, {childList:true, subtree:true});
+    const link = document.getElementById("featuredLink");
+    if (link) new MutationObserver(ensureFeaturedIcon).observe(link, {attributes:true, attributeFilter:["href"]});
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+</body>
+</html>
