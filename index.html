@@ -91,6 +91,36 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
 #featuredIcon.custom-brand-icon { background:#fff !important; border:1px solid #e5e7eb !important; }
 </style>
 
+
+<style id="theme-and-future-upgrade">
+/* Default experience: deep dark mode. Clicking the theme button enables white mode. */
+body:not(.dark-mode) { background:#f7f9ff !important; color:#17243b !important; }
+body:not(.dark-mode) header { background:rgba(255,255,255,.88) !important; border-color:#e2e8f4 !important; }
+body:not(.dark-mode) .navlinks { color:#63718a !important; }
+body:not(.dark-mode) .navlinks a:hover { color:#1d2a42 !important; }
+body:not(.dark-mode) .nav-cta { background:#17243b !important; color:#fff !important; }
+body:not(.dark-mode) .featured-tool { background:linear-gradient(110deg,#fff,#edf4ff 62%,#e9fbf6) !important; border-color:#dce5f2 !important; }
+body:not(.dark-mode) .featured-copy h3 { color:#17243b !important; }
+body:not(.dark-mode) .featured-copy p, body:not(.dark-mode) .featured-label { color:#65748c !important; }
+body:not(.dark-mode) .featured-icon { background:#fff !important; border-color:#dce5f2 !important; color:#334b70 !important; }
+body:not(.dark-mode) .featured-controls button { background:#fff !important; color:#334b70 !important; border-color:#dce5f2 !important; }
+body:not(.dark-mode) .tool-card, body:not(.dark-mode) .cta-box, body:not(.dark-mode) .tool-preview,
+body:not(.dark-mode) .category-filter, body:not(.dark-mode) .search-wrap {
+  background:#fff !important; color:#17243b !important; border-color:#e0e7f2 !important;
+}
+body:not(.dark-mode) .tool-card p, body:not(.dark-mode) .tool-card .tool-description,
+body:not(.dark-mode) .section-head p, body:not(.dark-mode) footer { color:#687790 !important; }
+body:not(.dark-mode) .filter { background:#fff !important; color:#60708b !important; border-color:#dfe6f1 !important; }
+body:not(.dark-mode) .filter.active { background:#e9efff !important; color:#2858c5 !important; border-color:#bdcdf8 !important; }
+.theme-toggle { transition:background .2s,color .2s,transform .2s; }
+.theme-toggle:active { transform:scale(.96); }
+@keyframes softGlow { 0%,100%{box-shadow:0 0 0 rgba(82,224,196,0)} 50%{box-shadow:0 0 28px rgba(82,224,196,.12)} }
+body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
+.tool-card { transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+.tool-card:hover { transform:translateY(-4px); }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
+</style>
+
 </head>
 <body>
 <header>
@@ -114,12 +144,12 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
     <section class="featured-tool" aria-label="Featured tool of the moment" aria-live="polite">
       <div class="featured-glow"></div>
       <div class="featured-icon" id="featuredIcon">&lt;/&gt;</div>
-      <div class="featured-copy"><div class="featured-label"><span class="live-dot"></span> FEATURED TOOL <span id="featuredCount">01 / 25</span></div><h3 id="featuredName">HTML Make</h3><p id="featuredDescription">A useful tool from your collection, selected automatically every 3 seconds.</p></div>
+      <div class="featured-copy"><div class="featured-label"><span class="live-dot"></span> FEATURED TOOL <span id="featuredCount">01 / 26</span></div><h3 id="featuredName">HTML Make</h3><p id="featuredDescription">A useful tool from your collection, selected automatically every 3 seconds.</p></div>
       <a class="featured-open" id="featuredLink" href="https://mysoftwere.github.io/htmlmake" target="_blank" rel="noopener noreferrer">Open featured tool <span>↗</span></a>
       <div class="featured-controls"><button type="button" id="featuredPrev" aria-label="Previous featured tool">‹</button><button type="button" id="featuredPause" aria-label="Pause automatic featured tool rotation">Ⅱ</button><button type="button" id="featuredNext" aria-label="Next featured tool">›</button></div>
     </section>
     <div class="tools-controls"><div class="filters" id="categories" aria-label="Filter tools">
-      <button class="filter active" data-filter="all">All tools <span>(25)</span></button>
+      <button class="filter active" data-filter="all">All tools <span>(26)</span></button>
       <button class="filter" data-filter="html">HTML & Code</button>
       <button class="filter" data-filter="pdf">PDF</button>
       <button class="filter" data-filter="url">URL & Links</button>
@@ -133,6 +163,7 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
       <a class="tool-card" data-category="pdf" data-name="PDF Make PDF maker generator" href="https://mysoftwere.github.io/pdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make</h3><p>Open your PDF-making tool and create PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="pdf" data-name="Old PDF Make classic pdf maker" href="https://mysoftwere.github.io/oldpdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="files" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>Old PDF Make</h3><p>Access the classic version of your PDF maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlcvter" href="https://mysoftwere.github.io/bulkurlcvter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter</h3><p>Work with multiple URLs in one place using this converter.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="pdf" data-name="PDF Make Update PDF Make Update pdfmakeupdate" href="https://mysoftwere.github.io/pdfmakeupdate/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make Update</h3><p>Open the updated PDF Make tool to create and work with PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="html" data-name="HTML Makee HTML builder" href="https://mysoftwere.github.io/htmlmakee" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Makee</h3><p>Another HTML creation tool from your collection.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="html" data-name="HTML New Make new html builder" href="https://mysoftwere.github.io/htmlnewmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="file-code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML New Make</h3><p>Open the newer version of your HTML maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="pdf" data-name="PDF Title Editor pdftotitel" href="https://mysoftwere.github.io/pdftotitel" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pen" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Title Editor</h3><p>Open your tool for working with PDF title information.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
@@ -189,7 +220,7 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
   search.addEventListener('input', update);
   const themeToggle = document.getElementById('themeToggle');
   function setTheme(dark){document.body.classList.toggle('dark-mode',dark);themeToggle.textContent=dark?'☾ Dark mode':'☼ Light mode';themeToggle.setAttribute('aria-pressed',String(dark));}
-  setTheme(false);
+  setTheme(true);
   themeToggle.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark-mode')));
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
@@ -419,6 +450,32 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
+})();
+</script>
+
+
+<div id="siteClock" aria-live="off" title="Local time"></div>
+<button id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+<style>
+#siteClock{position:fixed;right:18px;bottom:18px;z-index:30;padding:9px 12px;border-radius:12px;background:#111b2d;color:#dce7ff;border:1px solid #34435e;font:600 12px/1.3 "DM Sans",sans-serif;box-shadow:0 8px 24px #0002;opacity:.94}
+#backToTop{position:fixed;right:20px;bottom:68px;z-index:30;width:38px;height:38px;border-radius:12px;border:1px solid #35445f;background:#1a2940;color:#eaf1ff;font-size:21px;cursor:pointer;display:none;box-shadow:0 8px 22px #0002}
+body:not(.dark-mode) #siteClock{background:#fff;color:#263650;border-color:#dbe4f0}
+body:not(.dark-mode) #backToTop{background:#fff;color:#263650;border-color:#dbe4f0}
+@media(max-width:600px){#siteClock{right:10px;bottom:10px;font-size:11px}#backToTop{right:12px;bottom:54px}}
+</style>
+<script id="future-enhancements">
+(() => {
+ const clock=document.getElementById('siteClock');
+ const topBtn=document.getElementById('backToTop');
+ const tick=()=>{
+   const now=new Date();
+   const time=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'Asia/Dhaka'}).format(now);
+   const date=new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'Asia/Dhaka'}).format(now);
+   clock.textContent='BD '+time+' · '+date;
+ };
+ tick(); setInterval(tick,1000);
+ window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>350?'block':'none'},{passive:true});
+ topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
 </script>
 
