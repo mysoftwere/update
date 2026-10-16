@@ -79,6 +79,22 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
 @media(max-width:760px){.featured-tool{flex-wrap:wrap;padding:18px;gap:13px}.featured-copy{min-width:calc(100% - 85px)}.featured-open{margin-left:79px}.featured-controls{margin-left:auto}.featured-copy h3{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.rotating-heading,.featured-tool{transition:none}}
 
+
+/* Six varied featured-tool transition styles; one is selected on each 3-second change. */
+.featured-tool.fx-1{animation:featuredFade .85s ease both !important}
+.featured-tool.fx-2{animation:featuredSlideLeft .85s cubic-bezier(.2,.75,.25,1) both !important}
+.featured-tool.fx-3{animation:featuredSlideRight .85s cubic-bezier(.2,.75,.25,1) both !important}
+.featured-tool.fx-4{animation:featuredZoom .85s cubic-bezier(.2,.75,.25,1) both !important}
+.featured-tool.fx-5{animation:featuredFlip .85s ease both !important}
+.featured-tool.fx-6{animation:featuredRise .85s cubic-bezier(.2,.75,.25,1) both !important}
+@keyframes featuredFade{from{opacity:.15;filter:blur(3px)}to{opacity:1;filter:blur(0)}}
+@keyframes featuredSlideLeft{from{opacity:.25;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes featuredSlideRight{from{opacity:.25;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes featuredZoom{from{opacity:.25;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes featuredFlip{from{opacity:.25;transform:perspective(800px) rotateY(-9deg)}to{opacity:1;transform:perspective(800px) rotateY(0)}}
+@keyframes featuredRise{from{opacity:.2;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.featured-tool.fx-1,.featured-tool.fx-2,.featured-tool.fx-3,.featured-tool.fx-4,.featured-tool.fx-5,.featured-tool.fx-6{animation:none}}
+
 </style>
 
 <style id="custom-brand-like-icons">
@@ -115,7 +131,7 @@ body:not(.dark-mode) .filter.active { background:#e9efff !important; color:#2858
 .theme-toggle { transition:background .2s,color .2s,transform .2s; }
 .theme-toggle:active { transform:scale(.96); }
 @keyframes softGlow { 0%,100%{box-shadow:0 0 0 rgba(82,224,196,0)} 50%{box-shadow:0 0 28px rgba(82,224,196,.12)} }
-body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
+body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
 .tool-card { transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
 .tool-card:hover { transform:translateY(-4px); }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
@@ -149,7 +165,7 @@ body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
       <div class="featured-controls"><button type="button" id="featuredPrev" aria-label="Previous featured tool">‹</button><button type="button" id="featuredPause" aria-label="Pause automatic featured tool rotation">Ⅱ</button><button type="button" id="featuredNext" aria-label="Next featured tool">›</button></div>
     </section>
     <div class="tools-controls"><div class="filters" id="categories" aria-label="Filter tools">
-      <button class="filter active" data-filter="all">All tools <span>(26)</span></button>
+      <button class="filter active" data-filter="all">All tools <span>(27)</span></button>
       <button class="filter" data-filter="html">HTML & Code</button>
       <button class="filter" data-filter="pdf">PDF</button>
       <button class="filter" data-filter="url">URL & Links</button>
@@ -165,6 +181,7 @@ body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
       <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlcvter" href="https://mysoftwere.github.io/bulkurlcvter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter</h3><p>Work with multiple URLs in one place using this converter.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="pdf" data-name="PDF Make Update PDF Make Update pdfmakeupdate" href="https://mysoftwere.github.io/pdfmakeupdate/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make Update</h3><p>Open the updated PDF Make tool to create and work with PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="html" data-name="HTML Makee HTML builder" href="https://mysoftwere.github.io/htmlmakee" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Makee</h3><p>Another HTML creation tool from your collection.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+      <a class="tool-card" data-category="html" data-name="HTML Title HTML title editor htmltitel" href="https://mysoftwere.github.io/htmltitel/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Title</h3><p>Open the HTML Title tool to edit the title of your HTML page.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="html" data-name="HTML New Make new html builder" href="https://mysoftwere.github.io/htmlnewmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="file-code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML New Make</h3><p>Open the newer version of your HTML maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="pdf" data-name="PDF Title Editor pdftotitel" href="https://mysoftwere.github.io/pdftotitel" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pen" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Title Editor</h3><p>Open your tool for working with PDF title information.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
       <a class="tool-card" data-category="html" data-name="HTML File Downloader htmlfiledownlod" href="https://mysoftwere.github.io/htmlfiledownlod" target="_blank" rel="noopener noreferrer" style="--icon-bg:#5baeff1d;--icon-color:#8cc8ff;--icon-border:#5baeff38;--glow:#5baeff"><div class="card-top"><span class="tool-icon" data-icon="download" data-icon-bg="#eaf5ff" data-icon-color="#2877c7" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML File Downloader</h3><p>Access your HTML file downloading utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
@@ -243,9 +260,17 @@ body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
   let index = 0, timer = null, paused = false;
   const headingWords = ['HTML tools','PDF tools','SEO tools','URL tools','AI tools','Productivity'];
   let headingIndex = 0;
+  let lastFx = 0;
   function showTool(nextIndex) {
     index = (nextIndex + cards.length) % cards.length;
     const card = cards[index];
+    const fxClasses = ['fx-1','fx-2','fx-3','fx-4','fx-5','fx-6'];
+    let fx = Math.floor(Math.random() * fxClasses.length) + 1;
+    if (fx === lastFx) fx = (fx % fxClasses.length) + 1;
+    lastFx = fx;
+    panel.classList.remove(...fxClasses);
+    void panel.offsetWidth;
+    panel.classList.add('fx-' + fx);
     panel.classList.add('switching');
     window.setTimeout(() => {
       const originalIcon = card.querySelector('.tool-icon');
@@ -293,7 +318,14 @@ body.dark-mode .featured-tool { animation:softGlow 5s ease-in-out infinite; }
     order.forEach(url => { const card = map.get(url); if(card){grid.appendChild(card);map.delete(url);} });
     map.forEach(card => grid.appendChild(card));
   }
-  try { const saved = JSON.parse(localStorage.getItem(storageKey) || 'null'); if(saved) applySavedOrder(saved); } catch(e){}
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
+    if(Array.isArray(saved)) {
+      const newCardUrl = 'https://mysoftwere.github.io/htmltitel/';
+      if(!saved.includes(newCardUrl)) saved.splice(Math.min(6, saved.length), 0, newCardUrl);
+      applySavedOrder(saved);
+    }
+  } catch(e){}
   function setEditing(value){
     editing = value;
     editBtn.setAttribute('aria-pressed', String(value));
@@ -478,6 +510,325 @@ body:not(.dark-mode) #backToTop{background:#fff;color:#263650;border-color:#dbe4
  topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
 </script>
+
+
+<style id="premium-software-hover">
+/* Premium smooth hover interaction for every software card */
+.tools-grid .tool-card{
+  isolation:isolate; transform:translateY(0) scale(1);
+  transition:transform .32s cubic-bezier(.2,.8,.2,1), box-shadow .32s ease,
+    border-color .32s ease, background .32s ease;
+  will-change:transform;
+}
+.tools-grid .tool-card::after{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(115deg,transparent 12%,rgba(255,255,255,.12) 42%,transparent 68%);
+  transform:translateX(-130%); transition:transform .65s ease; z-index:0;
+}
+.tools-grid .tool-card > *{position:relative;z-index:1}
+.tools-grid .tool-card:hover,
+.tools-grid .tool-card:focus-visible{
+  transform:translateY(-8px) scale(1.018);
+  border-color:var(--glow,#8b7cff);
+  box-shadow:0 18px 38px color-mix(in srgb, var(--glow,#8b7cff) 22%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--glow,#8b7cff) 35%, transparent);
+}
+.tools-grid .tool-card:hover::after,
+.tools-grid .tool-card:focus-visible::after{transform:translateX(130%)}
+.tools-grid .tool-card .tool-icon{
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+}
+.tools-grid .tool-card:hover .tool-icon,
+.tools-grid .tool-card:focus-visible .tool-icon{
+  transform:translateY(-3px) rotate(-5deg) scale(1.1);
+  box-shadow:0 8px 20px color-mix(in srgb, var(--glow,#8b7cff) 24%, transparent);
+}
+.tools-grid .tool-card h3{transition:color .25s ease, letter-spacing .25s ease}
+.tools-grid .tool-card:hover h3,
+.tools-grid .tool-card:focus-visible h3{letter-spacing:0}
+.tools-grid .tool-card .arrow{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.tools-grid .tool-card:hover .arrow,
+.tools-grid .tool-card:focus-visible .arrow{transform:translate(4px,-3px) scale(1.18)}
+@media(hover:none){.tools-grid .tool-card:hover{transform:none;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){.tools-grid .tool-card,.tools-grid .tool-card::after,.tools-grid .tool-card *{transition:none!important;animation:none!important}}
+</style>
+
+
+
+<style id="cute-hover-animations">
+/* High-contrast hover effects that stay visible in BOTH light and dark themes */
+.tools-grid .tool-card {
+  position:relative; overflow:hidden; border:1px solid var(--card-hover-border, #d6def0) !important;
+  transition:background-color .28s ease, border-color .28s ease, box-shadow .28s ease !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card {
+  --card-hover-border:#c5d2ea;
+  background:#ffffff !important; color:#17233c !important;
+  box-shadow:0 5px 16px rgba(30,55,100,.10) !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card h3 { color:#17233c !important; }
+body:not(.dark-mode) .tools-grid .tool-card p,
+body:not(.dark-mode) .tools-grid .tool-card .category { color:#465875 !important; }
+body:not(.dark-mode) .tools-grid .tool-card:hover,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible {
+  background:#f7f9ff !important; border-color:#7357f5 !important;
+  box-shadow:0 14px 32px rgba(91,72,220,.24), 0 0 0 2px rgba(115,87,245,.18) !important;
+}
+body.dark-mode .tools-grid .tool-card:hover,
+body.dark-mode .tools-grid .tool-card:focus-visible {
+  border-color:var(--glow,#a78bfa) !important;
+  box-shadow:0 14px 32px color-mix(in srgb,var(--glow,#a78bfa) 32%,transparent),0 0 0 2px color-mix(in srgb,var(--glow,#a78bfa) 28%,transparent) !important;
+}
+.tools-grid .tool-card .tool-icon { transform-origin:center; }
+.tools-grid .tool-card.cute-fx-1 { animation: cuteBounce .62s cubic-bezier(.2,.8,.2,1); }
+.tools-grid .tool-card.cute-fx-2 { animation: cuteWiggle .55s ease; }
+.tools-grid .tool-card.cute-fx-3 { animation: cutePop .5s cubic-bezier(.2,.8,.2,1); }
+.tools-grid .tool-card.cute-fx-4 { animation: cuteFloat .65s ease; }
+.tools-grid .tool-card.cute-fx-5 { animation: cuteTilt .58s ease; }
+.tools-grid .tool-card.cute-fx-6 { animation: cuteSlide .55s ease; }
+.tools-grid .tool-card.cute-fx-7 { animation: cuteGlow .7s ease; }
+.tools-grid .tool-card.cute-fx-1 .tool-icon { animation: iconSpin .6s ease; }
+.tools-grid .tool-card.cute-fx-2 .tool-icon { animation: iconWiggle .55s ease; }
+.tools-grid .tool-card.cute-fx-3 .tool-icon { animation: iconPop .5s ease; }
+.tools-grid .tool-card.cute-fx-4 .tool-icon { animation: iconFloat .65s ease; }
+.tools-grid .tool-card.cute-fx-5 .tool-icon { animation: iconTilt .58s ease; }
+.tools-grid .tool-card.cute-fx-6 .tool-icon { animation: iconBounce .55s ease; }
+.tools-grid .tool-card.cute-fx-7 .tool-icon { animation: iconPulse .7s ease; }
+@keyframes cuteBounce { 0%,100%{transform:translateY(-5px) scale(1.015)} 35%{transform:translateY(-12px) scale(1.035)} 65%{transform:translateY(-3px) scale(1.01)} }
+@keyframes cuteWiggle { 0%,100%{transform:translateY(-5px) rotate(0)} 25%{transform:translateY(-5px) rotate(-1.5deg)} 75%{transform:translateY(-5px) rotate(1.5deg)} }
+@keyframes cutePop { 0%,100%{transform:translateY(-5px) scale(1.015)} 45%{transform:translateY(-7px) scale(1.055)} }
+@keyframes cuteFloat { 0%,100%{transform:translateY(-5px)} 50%{transform:translateY(-13px)} }
+@keyframes cuteTilt { 0%,100%{transform:translateY(-5px) rotate(0)} 35%{transform:translateY(-5px) rotate(-1deg)} 70%{transform:translateY(-5px) rotate(1deg)} }
+@keyframes cuteSlide { 0%{transform:translate(0,-5px)} 40%{transform:translate(5px,-5px)} 100%{transform:translate(0,-5px)} }
+@keyframes cuteGlow { 0%,100%{transform:translateY(-5px);filter:saturate(1)} 50%{transform:translateY(-7px);filter:saturate(1.35)} }
+@keyframes iconSpin { 0%{transform:rotate(0) scale(1.08)} 65%{transform:rotate(18deg) scale(1.18)} 100%{transform:rotate(-5deg) scale(1.1)} }
+@keyframes iconWiggle { 0%,100%{transform:rotate(-5deg) scale(1.1)} 30%{transform:rotate(-15deg) scale(1.15)} 70%{transform:rotate(8deg) scale(1.15)} }
+@keyframes iconPop { 0%,100%{transform:scale(1.1)} 45%{transform:scale(1.3)} }
+@keyframes iconFloat { 0%,100%{transform:translateY(-3px) scale(1.1)} 50%{transform:translateY(-9px) scale(1.16)} }
+@keyframes iconTilt { 0%,100%{transform:rotate(-5deg) scale(1.1)} 50%{transform:rotate(12deg) scale(1.18)} }
+@keyframes iconBounce { 0%,100%{transform:translateY(-3px) scale(1.1)} 40%{transform:translateY(-8px) scale(1.18)} 70%{transform:translateY(0) scale(1.08)} }
+@keyframes iconPulse { 0%,100%{transform:scale(1.1)} 50%{transform:scale(1.28)} }
+@media (prefers-reduced-motion:reduce) { .tools-grid .tool-card,.tools-grid .tool-card .tool-icon { animation:none !important; transition:none !important; } }
+</style>
+<script id="random-cute-hover-effects">
+(() => {
+  const effects = ['cute-fx-1','cute-fx-2','cute-fx-3','cute-fx-4','cute-fx-5','cute-fx-6','cute-fx-7'];
+  document.querySelectorAll('.tools-grid .tool-card').forEach(card => {
+    let last = '';
+    card.addEventListener('mouseenter', () => {
+      card.classList.remove(...effects);
+      const choices = effects.filter(name => name !== last);
+      last = choices[Math.floor(Math.random() * choices.length)];
+      void card.offsetWidth;
+      card.classList.add(last);
+    });
+    card.addEventListener('animationend', event => {
+      if (event.target === card) card.classList.remove(...effects);
+    });
+  });
+})();
+</script>
+
+
+<style id="high-contrast-light-gradient-hover">
+/* Bright gradient hover so the effect remains obvious on the white theme */
+body:not(.dark-mode) .tools-grid .tool-card {
+  background-color:#ffffff !important;
+  transition: background .32s ease, color .25s ease, border-color .25s ease, box-shadow .32s ease, transform .3s ease !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible {
+  background: linear-gradient(135deg, #6d28d9 0%, #2563eb 34%, #0891b2 66%, #db2777 100%) !important;
+  color:#ffffff !important;
+  border:1px solid #7c3aed !important;
+  box-shadow:0 16px 34px rgba(79,70,229,.30), 0 0 0 3px rgba(99,102,241,.20), inset 0 1px 0 rgba(255,255,255,.25) !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover h3,
+body:not(.dark-mode) .tools-grid .tool-card:hover p,
+body:not(.dark-mode) .tools-grid .tool-card:hover .category,
+body:not(.dark-mode) .tools-grid .tool-card:hover .open-tool,
+body:not(.dark-mode) .tools-grid .tool-card:hover .arrow,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible h3,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible p,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .category,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .open-tool,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .arrow {
+  color:#ffffff !important;
+  text-shadow:0 1px 3px rgba(15,23,42,.18);
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover .category,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .category {
+  background:rgba(255,255,255,.20) !important;
+  border-color:rgba(255,255,255,.45) !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover .tool-icon,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .tool-icon {
+  filter:drop-shadow(0 4px 8px rgba(15,23,42,.22));
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover::after,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible::after {
+  background:linear-gradient(115deg,transparent 8%,rgba(255,255,255,.42) 45%,transparent 78%) !important;
+}
+</style>
+
+
+<style id="premium-dark-mode-card-polish">
+/* Premium dark-mode treatment: rich surfaces at rest, vivid readable gradients on hover */
+body.dark-mode .tools-grid .tool-card {
+  --dark-glow:#8b5cf6;
+  color:#f8fafc !important;
+  background:linear-gradient(145deg,rgba(30,41,59,.98),rgba(15,23,42,.98)) !important;
+  border:1px solid rgba(148,163,184,.25) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.035) !important;
+  transition:background .35s ease,border-color .3s ease,box-shadow .35s ease,transform .3s ease !important;
+}
+body.dark-mode .tools-grid .tool-card h3 { color:#f8fafc !important; }
+body.dark-mode .tools-grid .tool-card p,
+body.dark-mode .tools-grid .tool-card .category,
+body.dark-mode .tools-grid .tool-card .open-tool,
+body.dark-mode .tools-grid .tool-card .arrow { color:#cbd5e1 !important; }
+body.dark-mode .tools-grid .tool-card:hover,
+body.dark-mode .tools-grid .tool-card:focus-visible {
+  background:linear-gradient(135deg,#312e81 0%,#4338ca 36%,#0e7490 72%,#86198f 100%) !important;
+  border-color:rgba(196,181,253,.95) !important;
+  box-shadow:0 20px 44px rgba(0,0,0,.42),0 0 0 1px rgba(167,139,250,.65),0 0 28px rgba(99,102,241,.34),inset 0 1px 0 rgba(255,255,255,.24) !important;
+}
+body.dark-mode .tools-grid .tool-card:hover h3,
+body.dark-mode .tools-grid .tool-card:hover p,
+body.dark-mode .tools-grid .tool-card:hover .category,
+body.dark-mode .tools-grid .tool-card:hover .open-tool,
+body.dark-mode .tools-grid .tool-card:hover .arrow,
+body.dark-mode .tools-grid .tool-card:focus-visible h3,
+body.dark-mode .tools-grid .tool-card:focus-visible p,
+body.dark-mode .tools-grid .tool-card:focus-visible .category,
+body.dark-mode .tools-grid .tool-card:focus-visible .open-tool,
+body.dark-mode .tools-grid .tool-card:focus-visible .arrow {
+  color:#fff !important;
+  text-shadow:0 1px 4px rgba(2,6,23,.3);
+}
+body.dark-mode .tools-grid .tool-card:hover .category,
+body.dark-mode .tools-grid .tool-card:focus-visible .category {
+  background:rgba(255,255,255,.16) !important;
+  border-color:rgba(255,255,255,.38) !important;
+}
+body.dark-mode .tools-grid .tool-card:hover .tool-icon,
+body.dark-mode .tools-grid .tool-card:focus-visible .tool-icon {
+  filter:drop-shadow(0 5px 10px rgba(2,6,23,.4)) brightness(1.12);
+}
+body.dark-mode .tools-grid .tool-card:hover::after,
+body.dark-mode .tools-grid .tool-card:focus-visible::after {
+  background:linear-gradient(115deg,transparent 7%,rgba(255,255,255,.28) 43%,transparent 72%) !important;
+}
+/* Vary the accent per card so the grid feels lively rather than repetitive */
+body.dark-mode .tools-grid .tool-card:nth-child(6n+1){--glow:#a78bfa}
+body.dark-mode .tools-grid .tool-card:nth-child(6n+2){--glow:#38bdf8}
+body.dark-mode .tools-grid .tool-card:nth-child(6n+3){--glow:#f472b6}
+body.dark-mode .tools-grid .tool-card:nth-child(6n+4){--glow:#34d399}
+body.dark-mode .tools-grid .tool-card:nth-child(6n+5){--glow:#fbbf24}
+body.dark-mode .tools-grid .tool-card:nth-child(6n){--glow:#fb7185}
+@media (prefers-reduced-motion:reduce) {
+  body.dark-mode .tools-grid .tool-card { transition:none !important; }
+}
+
+/* Distinct visual identity for each theme: futuristic dark, airy colorful light. */
+body.dark-mode {
+  background-color:#070b16 !important;
+  background-image:
+    radial-gradient(ellipse at 8% 2%,rgba(124,58,237,.24),transparent 34%),
+    radial-gradient(ellipse at 92% 10%,rgba(6,182,212,.16),transparent 30%),
+    radial-gradient(ellipse at 50% 100%,rgba(219,39,119,.08),transparent 38%) !important;
+}
+body.dark-mode .hero { background:linear-gradient(180deg,rgba(18,24,48,.18),transparent); }
+body.dark-mode .tool-card, body.dark-mode .featured-tool, body.dark-mode .cta-box {
+  backdrop-filter: blur(12px);
+  box-shadow:0 12px 35px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.035);
+}
+body.dark-mode .tools-grid .tool-card { border-radius:20px; }
+body.dark-mode .section-head h2, body.dark-mode h2 { text-shadow:0 3px 24px rgba(129,140,248,.12); }
+body.dark-mode .theme-toggle { background:linear-gradient(135deg,#29234c,#172b43) !important;border-color:#6255a5 !important;color:#e9e5ff !important; }
+
+body:not(.dark-mode) {
+  background-color:#f7f9ff !important;
+  background-image:
+    radial-gradient(ellipse at 0% 0%,rgba(96,165,250,.20),transparent 33%),
+    radial-gradient(ellipse at 100% 8%,rgba(244,114,182,.16),transparent 30%),
+    linear-gradient(180deg,#fbfcff 0%,#f1f6ff 52%,#fff7fb 100%) !important;
+  color:#17233c !important;
+}
+body:not(.dark-mode) header {
+  background:rgba(255,255,255,.82) !important;
+  border-bottom:1px solid rgba(148,163,184,.28) !important;
+  box-shadow:0 8px 30px rgba(65,85,130,.06);
+}
+body:not(.dark-mode) .hero {
+  background:linear-gradient(125deg,rgba(219,234,254,.68),rgba(250,232,255,.42) 52%,rgba(204,251,241,.45));
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:0 0 34px 34px;
+}
+body:not(.dark-mode) h1 .grad {
+  background-image:linear-gradient(100deg,#2563eb 0%,#7c3aed 48%,#db2777 76%,#0891b2 100%) !important;
+  -webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;
+}
+body:not(.dark-mode) .eyebrow {
+  background:linear-gradient(100deg,#eaf2ff,#f6eaff,#e5fbf7) !important;
+  border-color:#d7defa !important;color:#4b42a5 !important;
+}
+body:not(.dark-mode) .btn-primary {
+  background:linear-gradient(110deg,#2563eb,#7c3aed 58%,#db2777) !important;
+  color:#fff !important;box-shadow:0 12px 26px rgba(99,102,241,.24) !important;
+}
+body:not(.dark-mode) .theme-toggle {
+  background:linear-gradient(110deg,#fff,#edf4ff 55%,#fff0f7) !important;
+  color:#3d3a80 !important;border:1px solid #d9def5 !important;
+  box-shadow:0 5px 16px rgba(99,102,241,.10);
+}
+body:not(.dark-mode) .tools-grid .tool-card {
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(246,249,255,.96) 58%,rgba(255,247,252,.95)) !important;
+  border:1px solid rgba(196,207,231,.78) !important;
+  border-radius:20px !important;
+  box-shadow:0 8px 24px rgba(62,82,130,.075),inset 0 1px 0 #fff !important;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background .28s ease !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card:hover,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible {
+  background:linear-gradient(125deg,#dbeafe 0%,#ede9fe 35%,#fce7f3 68%,#ccfbf1 100%) !important;
+  border-color:#a5b4fc !important;
+  box-shadow:0 18px 38px rgba(79,70,229,.18),0 0 0 3px rgba(129,140,248,.13),inset 0 1px 0 rgba(255,255,255,.95) !important;
+  transform:translateY(-7px) scale(1.012) !important;
+}
+body:not(.dark-mode) .tools-grid .tool-card h3 {color:#1b2540 !important;}
+body:not(.dark-mode) .tools-grid .tool-card p,
+body:not(.dark-mode) .tools-grid .tool-card .category {color:#53627d !important;}
+body:not(.dark-mode) .tools-grid .tool-card:hover h3,
+body:not(.dark-mode) .tools-grid .tool-card:hover p,
+body:not(.dark-mode) .tools-grid .tool-card:hover .category,
+body:not(.dark-mode) .tools-grid .tool-card:hover .open-tool,
+body:not(.dark-mode) .tools-grid .tool-card:hover .arrow,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible h3,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible p,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .category,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .open-tool,
+body:not(.dark-mode) .tools-grid .tool-card:focus-visible .arrow {color:#29245e !important;}
+body:not(.dark-mode) .featured-tool {
+  background:linear-gradient(115deg,#fff 0%,#eaf2ff 43%,#f7eaff 72%,#e4fbf6 100%) !important;
+  border:1px solid #d9e1f4 !important;border-radius:24px !important;
+  box-shadow:0 18px 42px rgba(71,85,150,.12) !important;
+}
+body:not(.dark-mode) .tool-icon {
+  border-radius:15px !important;
+  box-shadow:0 5px 14px rgba(79,70,229,.12);
+}
+body:not(.dark-mode) .section-head h2 {color:#1b2540 !important;}
+body:not(.dark-mode) .cta-box {
+  background:linear-gradient(120deg,#e7f0ff,#f4eaff 50%,#e4fbf6) !important;
+  border:1px solid #dce4f5 !important;border-radius:24px !important;
+}
+body:not(.dark-mode) footer {color:#61708b !important;}
+@media (prefers-reduced-motion:reduce) {
+  body:not(.dark-mode) .tools-grid .tool-card {transition:none !important;}
+}
+
+</style>
 
 </body>
 </html>
