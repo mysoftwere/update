@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
-<meta name="description" content="MySoftwere — a collection of free online tools for HTML, PDF, URLs, text, SEO and productivity.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0b1020" name="theme-color"/>
+<meta content="MySoftwere — a collection of free online tools for HTML, PDF, URLs, text, SEO and productivity." name="description"/>
 <title>MySoftwere — Free Online Tools</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#080d1a;--panel:#10182a;--panel2:#121d32;--line:rgba(170,190,230,.14);--text:#f4f7ff;--muted:#9caac4;--accent:#8b7cff;--accent2:#52e0c4;--shadow:0 24px 80px rgba(0,0,0,.28)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% -5%,rgba(111,93,255,.22),transparent 38%),radial-gradient(ellipse at 96% 15%,rgba(36,204,184,.11),transparent 30%),var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
@@ -96,7 +97,6 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
 @media(prefers-reduced-motion:reduce){.featured-tool.fx-1,.featured-tool.fx-2,.featured-tool.fx-3,.featured-tool.fx-4,.featured-tool.fx-5,.featured-tool.fx-6{animation:none}}
 
 </style>
-
 <style id="custom-brand-like-icons">
 .tool-icon.custom-brand-icon {
   display:flex !important; align-items:center; justify-content:center;
@@ -106,8 +106,6 @@ body.dark-mode .rotating-heading{background-image:linear-gradient(100deg,#9cbaff
 .tool-icon.custom-brand-icon svg { width:100%; height:100%; max-width:38px; max-height:38px; display:block; }
 #featuredIcon.custom-brand-icon { background:#fff !important; border:1px solid #e5e7eb !important; }
 </style>
-
-
 <style id="theme-and-future-upgrade">
 /* Default experience: deep dark mode. Clicking the theme button enables white mode. */
 body:not(.dark-mode) { background:#f7f9ff !important; color:#17243b !important; }
@@ -136,80 +134,98 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
 .tool-card:hover { transform:translateY(-4px); }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 </style>
-
+<style id="occasional-gradient-heading-animation">
+/* Occasional colorful gradient shimmer for “My Top Software” heading */
+.rotating-heading{
+  background-size:250% 100% !important;
+  animation:topSoftwareGradientShimmer 7s ease-in-out infinite;
+  will-change:background-position;
+}
+@keyframes topSoftwareGradientShimmer{
+  0%,68%,100%{background-position:0% 50%;}
+  78%{background-position:100% 50%;}
+  88%{background-position:15% 50%;}
+}
+body.dark-mode .rotating-heading{
+  background-image:linear-gradient(100deg,#a78bfa 0%,#38bdf8 28%,#5eead4 52%,#f0abfc 76%,#a78bfa 100%) !important;
+}
+body:not(.dark-mode) .rotating-heading{
+  background-image:linear-gradient(100deg,#2563eb 0%,#7c3aed 27%,#db2777 52%,#0891b2 76%,#2563eb 100%) !important;
+}
+@media(prefers-reduced-motion:reduce){.rotating-heading{animation:none !important;background-position:50% 50% !important;}}
+</style>
 </head>
 <body>
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="#" aria-label="MySoftwere home">
-      <span class="logo" aria-label="MySoftwere logo"><svg viewBox="0 0 40 40" role="img" aria-label="MS"><path d="M6 29V11.5c0-1.4 1.8-2 2.7-.9L17 22l8.3-11.4c.9-1.2 2.7-.5 2.7.9V29" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 13.5c-2-2.2-8-2.5-8 1.2 0 3.2 7.6 2.4 7.6 6.7 0 4.2-5.4 5.7-9.1 2.8" fill="none" stroke="#bdfdf0" stroke-width="3.2" stroke-linecap="round"/></svg></span>
-      <span class="brand-copy"><span class="brand-name"><span class="my">My</span><em>Softwere</em></span><span class="brand-tagline">Tools for smarter work</span></span>
-    </a>
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="#tools">All tools</a><a href="#about">About</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">☼ Light mode</button><a class="nav-cta" href="#tools">Explore tools ↗</a>
-    </nav>
-  </div>
+<div class="wrap nav">
+<a aria-label="MySoftwere home" class="brand" href="#">
+<span aria-label="MySoftwere logo" class="logo"><svg aria-label="MS" role="img" viewbox="0 0 40 40"><path d="M6 29V11.5c0-1.4 1.8-2 2.7-.9L17 22l8.3-11.4c.9-1.2 2.7-.5 2.7.9V29" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path><path d="M32 13.5c-2-2.2-8-2.5-8 1.2 0 3.2 7.6 2.4 7.6 6.7 0 4.2-5.4 5.7-9.1 2.8" fill="none" stroke="#bdfdf0" stroke-linecap="round" stroke-width="3.2"></path></svg></span>
+<span class="brand-copy"><span class="brand-name"><span class="my">My</span><em>Softwere</em></span><span class="brand-tagline">Tools for smarter work</span></span>
+</a>
+<nav aria-label="Main navigation" class="navlinks">
+<a href="#tools">All tools</a><a href="#about">About</a><button aria-label="Toggle light and dark mode" class="theme-toggle" id="themeToggle" type="button">☼ Light mode</button><a class="nav-cta" href="#tools">Explore tools ↗</a>
+</nav>
+</div>
 </header>
 <main>
 <section class="tools-section" id="tools">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">THE TOOLBOX</div><h2><span class="heading-static">Find the right </span><span id="rotatingHeading" class="rotating-heading">HTML tool</span><span class="heading-dot">.</span></h2><p>Discover useful software and web tools, one smart pick at a time.</p></div>
-      <label class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input class="search" id="toolSearch" type="search" placeholder="Search tools..." aria-label="Search tools"></label>
-    </div>
-    <section class="featured-tool" aria-label="Featured tool of the moment" aria-live="polite">
-      <div class="featured-glow"></div>
-      <div class="featured-icon" id="featuredIcon">&lt;/&gt;</div>
-      <div class="featured-copy"><div class="featured-label"><span class="live-dot"></span> FEATURED TOOL <span id="featuredCount">01 / 26</span></div><h3 id="featuredName">HTML Make</h3><p id="featuredDescription">A useful tool from your collection, selected automatically every 3 seconds.</p></div>
-      <a class="featured-open" id="featuredLink" href="https://mysoftwere.github.io/htmlmake" target="_blank" rel="noopener noreferrer">Open featured tool <span>↗</span></a>
-      <div class="featured-controls"><button type="button" id="featuredPrev" aria-label="Previous featured tool">‹</button><button type="button" id="featuredPause" aria-label="Pause automatic featured tool rotation">Ⅱ</button><button type="button" id="featuredNext" aria-label="Next featured tool">›</button></div>
-    </section>
-    <div class="tools-controls"><div class="filters" id="categories" aria-label="Filter tools">
-      <button class="filter active" data-filter="all">All tools <span>(27)</span></button>
-      <button class="filter" data-filter="html">HTML & Code</button>
-      <button class="filter" data-filter="pdf">PDF</button>
-      <button class="filter" data-filter="url">URL & Links</button>
-      <button class="filter" data-filter="text">Text & Notes</button>
-      <button class="filter" data-filter="seo">SEO</button>
-      <button class="filter" data-filter="productivity">Websites & Productivity</button>
-    </div><div class="position-controls"><button type="button" class="position-btn" id="editPositions" aria-pressed="false">↕ Change positions</button><button type="button" class="position-btn secondary-position" id="savePositions" hidden>Save order</button><button type="button" class="position-btn secondary-position" id="resetPositions" hidden>Reset</button></div></div>
-    <p class="position-hint" id="positionHint" hidden>Drag software cards to change their order, then press “Save order”. This order is saved in this browser.</p>
-    <div class="tools-grid" id="toolsGrid">
-      <a class="tool-card" data-category="html" data-name="HTML Make HTML code builder editor" href="https://mysoftwere.github.io/htmlmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Make</h3><p>Create and work with HTML content using your HTML-making tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="pdf" data-name="PDF Make PDF maker generator" href="https://mysoftwere.github.io/pdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make</h3><p>Open your PDF-making tool and create PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="pdf" data-name="Old PDF Make classic pdf maker" href="https://mysoftwere.github.io/oldpdfmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="files" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>Old PDF Make</h3><p>Access the classic version of your PDF maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlcvter" href="https://mysoftwere.github.io/bulkurlcvter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter</h3><p>Work with multiple URLs in one place using this converter.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="pdf" data-name="PDF Make Update PDF Make Update pdfmakeupdate" href="https://mysoftwere.github.io/pdfmakeupdate/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Make Update</h3><p>Open the updated PDF Make tool to create and work with PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="html" data-name="HTML Makee HTML builder" href="https://mysoftwere.github.io/htmlmakee" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Makee</h3><p>Another HTML creation tool from your collection.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="html" data-name="HTML Title HTML title editor htmltitel" href="https://mysoftwere.github.io/htmltitel/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML Title</h3><p>Open the HTML Title tool to edit the title of your HTML page.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="html" data-name="HTML New Make new html builder" href="https://mysoftwere.github.io/htmlnewmake" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="file-code" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML New Make</h3><p>Open the newer version of your HTML maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="pdf" data-name="PDF Title Editor pdftotitel" href="https://mysoftwere.github.io/pdftotitel" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799"><div class="card-top"><span class="tool-icon" data-icon="file-pen" data-icon-bg="#fff0f2" data-icon-color="#dc4058" aria-hidden="true"></span><span class="category">PDF</span></div><h3>PDF Title Editor</h3><p>Open your tool for working with PDF title information.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="html" data-name="HTML File Downloader htmlfiledownlod" href="https://mysoftwere.github.io/htmlfiledownlod" target="_blank" rel="noopener noreferrer" style="--icon-bg:#5baeff1d;--icon-color:#8cc8ff;--icon-border:#5baeff38;--glow:#5baeff"><div class="card-top"><span class="tool-icon" data-icon="download" data-icon-bg="#eaf5ff" data-icon-color="#2877c7" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>HTML File Downloader</h3><p>Access your HTML file downloading utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="text" data-name="Notepad text notes editor" href="https://mysoftwere.github.io/notepad" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b"><div class="card-top"><span class="tool-icon" data-icon="notebook" data-icon-bg="#fff6df" data-icon-color="#b77912" aria-hidden="true"></span><span class="category">Text & Notes</span></div><h3>Notepad</h3><p>Quickly open your simple text and note-taking tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="url" data-name="Link2F link to file link tool" href="https://mysoftwere.github.io/link2f" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="link-2" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Link2F</h3><p>Open your Link2F utility for link-related tasks.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="Sitemap Generator sitemap SEO" href="https://mysoftwere.github.io/sitemap" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="network" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">SEO</span></div><h3>Sitemap Generator</h3><p>Access your sitemap tool for website SEO workflows.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlconverter" href="https://mysoftwere.github.io/bulkurlconverter" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="git-compare" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">URL & Links</span></div><h3>Bulk URL Converter Pro</h3><p>Open the alternate Bulk URL Converter version.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="html" data-name="Title Change HTML titelchtml title changer" href="https://mysoftwere.github.io/titelchtml" target="_blank" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff"><div class="card-top"><span class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce" aria-hidden="true"></span><span class="category">HTML & Code</span></div><h3>Title Change HTML</h3><p>Open your HTML title-changing utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
-
-      <a class="tool-card" data-category="text" data-name="base64 encoder / decoder" href="https://www.base64encode.org/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b"><div class="card-top"><span class="tool-icon" data-icon="binary" data-icon-bg="#fff6df" data-icon-color="#b77912" aria-hidden="true"></span><span class="category">Text</span></div><h3>Base64 Encoder / Decoder</h3><p>Encode or decode text with Base64.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="rocket indexer" href="https://rocketindexer.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="rocket" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Rocket Indexer</h3><p>Open Rocket Indexer for URL indexing workflows.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="crawlme" href="https://crawlme.net/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="scan-search" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>CrawlMe</h3><p>Visit CrawlMe for website crawling and indexing tasks.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="gooindex" href="https://gooindex.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="search-check" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>GooIndex</h3><p>Open GooIndex for URL indexing services.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="productivity" data-name="imdb" href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="clapperboard" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>IMDb</h3><p>Explore movies, TV shows and entertainment information.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="productivity" data-name="espn india" href="https://www.espn.in/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="trophy" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>ESPN India</h3><p>Sports news, scores and coverage from ESPN India.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="productivity" data-name="mailmeteor" href="https://mailmeteor.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="mail" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>Mailmeteor</h3><p>Explore email productivity and mail merge tools.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="google trends" href="https://trends.google.com/trends/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Google Trends</h3><p>Explore search interest and trending topics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="productivity" data-name="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="bot" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>ChatGPT</h3><p>Open ChatGPT for AI assistance.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="wpcnt" href="https://www.wpcnt.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="chart" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>WPCNT</h3><p>Open WPCNT website.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="productivity" data-name="mohmal temporary inbox" href="https://www.mohmal.com/en/inbox" target="_blank" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4"><div class="card-top"><span class="tool-icon" data-icon="mail-open" data-icon-bg="#e6faf5" data-icon-color="#078b78" aria-hidden="true"></span><span class="category">Productivity</span></div><h3>Mohmal Temporary Inbox</h3><p>Open Mohmal temporary email inbox.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-      <a class="tool-card" data-category="seo" data-name="histats" href="https://www.histats.com/" target="_blank" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff"><div class="card-top"><span class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb" aria-hidden="true"></span><span class="category">Seo</span></div><h3>Histats</h3><p>Open Histats website statistics and visitor analytics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
-    </div>
-    <div class="no-results" id="noResults">No tools match your search. Try another keyword or category.</div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<div><div class="kicker">THE TOOLBOX</div><h2><span class="heading-static">My Top </span><span class="rotating-heading" id="rotatingHeading">Software</span><span class="heading-dot">.</span></h2><p>Discover useful software and web tools, one smart pick at a time.</p></div>
+<label class="search-wrap"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input aria-label="Search tools" class="search" id="toolSearch" placeholder="Search tools..." type="search"/></label>
+</div>
+<section aria-label="Featured tool of the moment" aria-live="polite" class="featured-tool">
+<div class="featured-glow"></div>
+<div class="featured-icon" id="featuredIcon">&lt;/&gt;</div>
+<div class="featured-copy"><div class="featured-label"><span class="live-dot"></span> FEATURED TOOL <span id="featuredCount">01 / 26</span></div><h3 id="featuredName">HTML Make</h3><p id="featuredDescription">A useful tool from your collection, selected automatically every 3 seconds.</p></div>
+<a class="featured-open" href="https://mysoftwere.github.io/htmlmake" id="featuredLink" rel="noopener noreferrer" target="_blank">Open featured tool <span>↗</span></a>
+<div class="featured-controls"><button aria-label="Previous featured tool" id="featuredPrev" type="button">‹</button><button aria-label="Pause automatic featured tool rotation" id="featuredPause" type="button">Ⅱ</button><button aria-label="Next featured tool" id="featuredNext" type="button">›</button></div>
+</section>
+<div class="tools-controls"><div aria-label="Filter tools" class="filters" id="categories">
+<button class="filter active" data-filter="all">All tools <span>(27)</span></button>
+<button class="filter" data-filter="html">HTML &amp; Code</button>
+<button class="filter" data-filter="pdf">PDF</button>
+<button class="filter" data-filter="url">URL &amp; Links</button>
+<button class="filter" data-filter="text">Text &amp; Notes</button>
+<button class="filter" data-filter="seo">SEO</button>
+<button class="filter" data-filter="productivity">Websites &amp; Productivity</button>
+</div><div class="position-controls"><button aria-pressed="false" class="position-btn" id="editPositions" type="button">↕ Change positions</button><button class="position-btn secondary-position" hidden="" id="savePositions" type="button">Save order</button><button class="position-btn secondary-position" hidden="" id="resetPositions" type="button">Reset</button></div></div>
+<p class="position-hint" hidden="" id="positionHint">Drag software cards to change their order, then press “Save order”. This order is saved in this browser.</p>
+<div class="tools-grid" id="toolsGrid">
+<a class="tool-card" data-category="html" data-name="HTML Make HTML code builder editor" href="https://mysoftwere.github.io/htmlmake" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce"></span><span class="category">HTML &amp; Code</span></div><h3>HTML Make</h3><p>Create and work with HTML content using your HTML-making tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="pdf" data-name="PDF Make PDF maker generator" href="https://mysoftwere.github.io/pdfmake" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058"></span><span class="category">PDF</span></div><h3>PDF Make</h3><p>Open your PDF-making tool and create PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="pdf" data-name="Old PDF Make classic pdf maker" href="https://mysoftwere.github.io/oldpdfmake" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="files" data-icon-bg="#fff0f2" data-icon-color="#dc4058"></span><span class="category">PDF</span></div><h3>Old PDF Make</h3><p>Access the classic version of your PDF maker.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlcvter" href="https://mysoftwere.github.io/bulkurlcvter" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="link" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">URL &amp; Links</span></div><h3>Bulk URL Converter</h3><p>Work with multiple URLs in one place using this converter.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="pdf" data-name="PDF Make Update PDF Make Update pdfmakeupdate" href="https://mysoftwere.github.io/pdfmakeupdate/" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058"></span><span class="category">PDF</span></div><h3>PDF Make Update</h3><p>Open the updated PDF Make tool to create and work with PDF documents.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="html" data-name="HTML Makee HTML builder" href="https://mysoftwere.github.io/htmlmakee" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="code" data-icon-bg="#e8efff" data-icon-color="#245fce"></span><span class="category">HTML &amp; Code</span></div><h3>HTML Makee</h3><p>Another HTML creation tool from your collection.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="html" data-name="HTML Title HTML title editor htmltitel" href="https://mysoftwere.github.io/htmltitel/" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce"></span><span class="category">HTML &amp; Code</span></div><h3>HTML Title</h3><p>Open the HTML Title tool to edit the title of your HTML page.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="html" data-name="HTML Downloader HTML file downloader" href="https://mysoftwere.github.io/htmldownloder/" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="file-down" data-icon-bg="#e8efff" data-icon-color="#245fce"></span><span class="category">HTML &amp; Code</span></div><h3>HTML Downloader</h3><p>Download HTML files easily with your HTML Downloader tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="pdf" data-name="PDF Title Editor pdftotitel" href="https://mysoftwere.github.io/pdftotitel" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="file-pen" data-icon-bg="#fff0f2" data-icon-color="#dc4058"></span><span class="category">PDF</span></div><h3>PDF Title Editor</h3><p>Open your tool for working with PDF title information.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="pdf" data-name="PDF No Date PDF date remover pdfnodate" href="https://mysoftwere.github.io/pdfnodate/" rel="noopener noreferrer" style="--icon-bg:#ff77991b;--icon-color:#ff9bb2;--icon-border:#ff779936;--glow:#ff7799" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="file-pdf" data-icon-bg="#fff0f2" data-icon-color="#dc4058"></span><span class="category">PDF</span></div><h3>PDF No Date</h3><p>Open PDF No Date to remove date information from PDF files.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="text" data-name="Notepad text notes editor" href="https://mysoftwere.github.io/notepad" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="notebook" data-icon-bg="#fff6df" data-icon-color="#b77912"></span><span class="category">Text &amp; Notes</span></div><h3>Notepad</h3><p>Quickly open your simple text and note-taking tool.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="url" data-name="Link2F link to file link tool" href="https://mysoftwere.github.io/link2f" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="link-2" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">URL &amp; Links</span></div><h3>Link2F</h3><p>Open your Link2F utility for link-related tasks.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="Sitemap Generator sitemap SEO" href="https://mysoftwere.github.io/sitemap" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="network" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">SEO</span></div><h3>Sitemap Generator</h3><p>Access your sitemap tool for website SEO workflows.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="url" data-name="Bulk URL Converter bulkurlconverter" href="https://mysoftwere.github.io/bulkurlconverter" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="git-compare" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">URL &amp; Links</span></div><h3>Bulk URL Converter Pro</h3><p>Open the alternate Bulk URL Converter version.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="html" data-name="Title Change HTML titelchtml title changer" href="https://mysoftwere.github.io/titelchtml" rel="noopener noreferrer" style="--icon-bg:#8b7cff20;--icon-color:#b7aaff;--icon-border:#8b7cff38;--glow:#8b7cff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="type" data-icon-bg="#e8efff" data-icon-color="#245fce"></span><span class="category">HTML &amp; Code</span></div><h3>Title Change HTML</h3><p>Open your HTML title-changing utility.</p><div class="open-tool">Open tool <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="text" data-name="base64 encoder / decoder" href="https://www.base64encode.org/" rel="noopener noreferrer" style="--icon-bg:#ffc76b1d;--icon-color:#ffd48d;--icon-border:#ffc76b38;--glow:#ffc76b" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="binary" data-icon-bg="#fff6df" data-icon-color="#b77912"></span><span class="category">Text</span></div><h3>Base64 Encoder / Decoder</h3><p>Encode or decode text with Base64.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="rocket indexer" href="https://rocketindexer.com/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="rocket" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>Rocket Indexer</h3><p>Open Rocket Indexer for URL indexing workflows.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="crawlme" href="https://crawlme.net/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="scan-search" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>CrawlMe</h3><p>Visit CrawlMe for website crawling and indexing tasks.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="gooindex" href="https://gooindex.com/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="search-check" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>GooIndex</h3><p>Open GooIndex for URL indexing services.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="productivity" data-name="imdb" href="https://www.imdb.com/" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="clapperboard" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">Productivity</span></div><h3>IMDb</h3><p>Explore movies, TV shows and entertainment information.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="productivity" data-name="espn india" href="https://www.espn.in/" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="trophy" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">Productivity</span></div><h3>ESPN India</h3><p>Sports news, scores and coverage from ESPN India.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="productivity" data-name="mailmeteor" href="https://mailmeteor.com/" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="mail" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">Productivity</span></div><h3>Mailmeteor</h3><p>Explore email productivity and mail merge tools.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="google trends" href="https://trends.google.com/trends/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>Google Trends</h3><p>Explore search interest and trending topics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="productivity" data-name="chatgpt" href="https://chatgpt.com/" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="bot" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">Productivity</span></div><h3>ChatGPT</h3><p>Open ChatGPT for AI assistance.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="wpcnt" href="https://www.wpcnt.com/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="chart" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>WPCNT</h3><p>Open WPCNT website.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="productivity" data-name="mohmal temporary inbox" href="https://www.mohmal.com/en/inbox" rel="noopener noreferrer" style="--icon-bg:#52e0c41b;--icon-color:#69e6cb;--icon-border:#52e0c438;--glow:#52e0c4" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="mail-open" data-icon-bg="#e6faf5" data-icon-color="#078b78"></span><span class="category">Productivity</span></div><h3>Mohmal Temporary Inbox</h3><p>Open Mohmal temporary email inbox.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+<a class="tool-card" data-category="seo" data-name="histats" href="https://www.histats.com/" rel="noopener noreferrer" style="--icon-bg:#c38aff1d;--icon-color:#d5a8ff;--icon-border:#c38aff38;--glow:#c38aff" target="_blank"><div class="card-top"><span aria-hidden="true" class="tool-icon" data-icon="trend" data-icon-bg="#f3eaff" data-icon-color="#8a43cb"></span><span class="category">Seo</span></div><h3>Histats</h3><p>Open Histats website statistics and visitor analytics.</p><div class="open-tool">Open website <span class="arrow">↗</span></div></a>
+</div>
+<div class="no-results" id="noResults">No tools match your search. Try another keyword or category.</div>
+</div>
 </section>
 <section class="bottom-cta" id="about"><div class="wrap"><div class="cta-box"><div><h2>Your toolkit, all in one place.</h2><p>Bookmark MySoftwere and come back whenever you need a quick online tool.</p></div><a class="btn btn-primary" href="#tools">Browse the collection <span>↗</span></a></div></div></section>
 </main>
-<footer><div class="wrap footer-row"><div><span class="footer-brand">MySoftwere</span><span> &nbsp;·&nbsp; Useful tools, simpler work.</span></div><div class="footer-links"><a href="#tools">All tools</a><a href="https://github.com/mysoftwere" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#about">About</a></div><div>© <span id="year"></span> MySoftwere</div></div></footer>
+<footer><div class="wrap footer-row"><div><span class="footer-brand">MySoftwere</span><span>  ·  Useful tools, simpler work.</span></div><div class="footer-links"><a href="#tools">All tools</a><a href="https://github.com/mysoftwere" rel="noopener noreferrer" target="_blank">GitHub</a><a href="#about">About</a></div><div>© <span id="year"></span> MySoftwere</div></div></footer>
 <script>
 (() => {
   const search = document.getElementById('toolSearch');
@@ -242,9 +258,6 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
-
-
-
 <script>
 (() => {
   const cards = [...document.querySelectorAll('#toolsGrid .tool-card')];
@@ -298,8 +311,6 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
   showTool(0); start();
 })();
 </script>
-
-
 <script>
 (() => {
   const grid = document.getElementById('toolsGrid');
@@ -366,8 +377,6 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
   });
 })();
 </script>
-
-
 <script>
 (() => {
  const paths = {"code": "<path d=\"m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16\"/>", "file-pdf": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M8 15h2a1.5 1.5 0 0 1 0 3H8v-5M14 18v-5h1a2.5 2.5 0 0 1 0 5z\"/>", "files": "<path d=\"M15 2H6a2 2 0 0 0-2 2v14\"/><path d=\"M18 8H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V10z\"/>", "link": "<path d=\"M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7\"/><path d=\"M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7\"/>", "file-code": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M10 13l-2 2 2 2M14 13l2 2-2 2\"/>", "file-pen": "<path d=\"M12 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v4\"/><path d=\"M14 2v6h6M18 16l3-3 2 2-3 3-4 1z\"/>", "download": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5M12 15V3\"/>", "notebook": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"/><path d=\"M8 7h8M8 11h8\"/>", "link-2": "<path d=\"M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7\"/><path d=\"M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7\"/>", "network": "<rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 8v4M5 16v-4h14v4\"/>", "git-compare": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"18\" r=\"3\"/><path d=\"M6 9v8a4 4 0 0 0 4 4h5M18 15V7a4 4 0 0 0-4-4H9\"/>", "type": "<path d=\"M4 7V4h16v3M9 20h6M12 4v16\"/>", "binary": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>", "rocket": "<path d=\"M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z\"/><path d=\"m12 15-3-3a22 22 0 0 1 3-5c3-3 7-4 9-4 0 2-1 6-4 9a22 22 0 0 1-5 3z\"/>", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2\"/><circle cx=\"10.5\" cy=\"10.5\" r=\"3.5\"/><path d=\"m13 13 4 4\"/>", "search-check": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4M8 10l2 2 4-4\"/>", "clapperboard": "<path d=\"M4 4h16v16H4z\"/><path d=\"m4 9 16-5M9 4l3 5M16 4l3 5\"/>", "trophy": "<path d=\"M8 4h8v5a4 4 0 0 1-8 0zM12 13v6M8 21h8M8 6H3v2a4 4 0 0 0 4 4M16 6h5v2a4 4 0 0 1-4 4\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/>", "trend": "<path d=\"M3 3v18h18\"/><path d=\"m7 14 4-4 4 4 6-7\"/>", "bot": "<rect x=\"4\" y=\"8\" width=\"16\" height=\"12\" rx=\"2\"/><path d=\"M12 4v4M9 13h.01M15 13h.01M9 17h6M2 12v4M22 12v4\"/>", "chart": "<path d=\"M3 3v18h18\"/><rect x=\"7\" y=\"12\" width=\"3\" height=\"6\" rx=\"1\"/><rect x=\"13\" y=\"8\" width=\"3\" height=\"10\" rx=\"1\"/><rect x=\"19\" y=\"5\" width=\"2\" height=\"13\" rx=\"1\"/>", "mail-open": "<path d=\"m3 9 9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"m3 9 9 6 9-6\"/>"};
@@ -385,8 +394,6 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
  if (featured) { featured.style.background='#e8efff'; featured.style.color='#245fce'; }
 })();
 </script>
-
-
 <script id="embedded-custom-brand-like-icons">
 (() => {
   const icons = {
@@ -456,8 +463,6 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
   else init();
 })();
 </script>
-
-
 <script id="featured-icon-fallback-fix">
 (() => {
   const genericIcon = `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="2" width="42" height="44" rx="9" fill="#fee2e2"/><path d="M14 8h14l8 8v24H14z" fill="#fff" stroke="#dc2626" stroke-width="2"/><path d="M28 8v9h8" fill="none" stroke="#dc2626" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="900" fill="#dc2626">PDF</text></svg>`;
@@ -484,34 +489,51 @@ body.dark-mode .featured-tool { box-shadow:0 12px 34px rgba(0,0,0,.18); }
   else init();
 })();
 </script>
-
-
-<div id="siteClock" aria-live="off" title="Local time"></div>
-<button id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+<div aria-label="Bangladesh local time" id="siteClock" title="Bangladesh local time">
+  <div class="clock-face" aria-hidden="true">
+    <span class="clock-mark m12"></span><span class="clock-mark m3"></span><span class="clock-mark m6"></span><span class="clock-mark m9"></span>
+    <span class="clock-hand hour-hand" id="clockHour"></span><span class="clock-hand minute-hand" id="clockMinute"></span><span class="clock-hand second-hand" id="clockSecond"></span><span class="clock-pin"></span>
+  </div>
+  <div class="clock-readout"><div class="clock-label"><span class="clock-live-dot"></span> BANGLADESH TIME</div><div class="clock-digital" id="clockDigital">00:00:00</div><div class="clock-date" id="clockDate">Loading date…</div></div>
+</div>
+<button aria-label="Back to top" id="backToTop" title="Back to top" type="button">↑</button>
 <style>
-#siteClock{position:fixed;right:18px;bottom:18px;z-index:30;padding:9px 12px;border-radius:12px;background:#111b2d;color:#dce7ff;border:1px solid #34435e;font:600 12px/1.3 "DM Sans",sans-serif;box-shadow:0 8px 24px #0002;opacity:.94}
-#backToTop{position:fixed;right:20px;bottom:68px;z-index:30;width:38px;height:38px;border-radius:12px;border:1px solid #35445f;background:#1a2940;color:#eaf1ff;font-size:21px;cursor:pointer;display:none;box-shadow:0 8px 22px #0002}
-body:not(.dark-mode) #siteClock{background:#fff;color:#263650;border-color:#dbe4f0}
-body:not(.dark-mode) #backToTop{background:#fff;color:#263650;border-color:#dbe4f0}
-@media(max-width:600px){#siteClock{right:10px;bottom:10px;font-size:11px}#backToTop{right:12px;bottom:54px}}
+#siteClock{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:11px;padding:10px 13px 10px 10px;border-radius:18px;background:linear-gradient(145deg,#111827,#1f2937);color:#f8fafc;border:1px solid rgba(248,70,70,.65);font-family:"DM Sans",sans-serif;box-shadow:0 10px 30px #0003,0 0 0 1px rgba(239,68,68,.12),0 0 22px rgba(239,68,68,.14);backdrop-filter:blur(12px);}
+.clock-face{width:58px;height:58px;flex:0 0 58px;border-radius:50%;position:relative;background:radial-gradient(circle at 35% 28%,#fff 0%,#f8fafc 45%,#e5e7eb 100%);border:3px solid #ef4444;box-shadow:inset 0 0 0 2px #fecaca,0 0 0 3px rgba(239,68,68,.13),0 4px 12px #0003;}
+.clock-mark{position:absolute;background:#991b1b;border-radius:2px;z-index:1}.m12,.m6{width:2px;height:5px;left:25px}.m12{top:5px}.m6{bottom:5px}.m3,.m9{height:2px;width:5px;top:25px}.m3{right:5px}.m9{left:5px}
+.clock-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:8px;z-index:2}.hour-hand{height:15px;width:3.5px;background:#1f2937;margin-left:-1.75px}.minute-hand{height:21px;width:2.5px;background:#374151;margin-left:-1.25px}.second-hand{height:23px;width:1.5px;background:#ef4444;margin-left:-.75px}.clock-pin{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:#dc2626;border:1px solid #fff;z-index:3}
+.clock-readout{min-width:112px}.clock-label{font-size:9px;letter-spacing:1.25px;font-weight:800;color:#fca5a5;display:flex;align-items:center;gap:5px;white-space:nowrap}.clock-live-dot{width:5px;height:5px;border-radius:50%;background:#ef4444;box-shadow:0 0 8px #ef4444;animation:clockPulse 2s ease-in-out infinite}.clock-digital{font-size:20px;line-height:1.25;font-weight:800;letter-spacing:1.1px;font-variant-numeric:tabular-nums;color:#fff}.clock-date{font-size:10px;color:#cbd5e1;margin-top:2px;white-space:nowrap}
+@keyframes clockPulse{50%{opacity:.45;box-shadow:0 0 2px #ef4444}}
+body:not(.dark-mode) #siteClock{background:linear-gradient(145deg,#fff,#fff1f2);color:#1f2937;border-color:#ef4444;box-shadow:0 10px 28px rgba(15,23,42,.13),0 0 0 1px rgba(239,68,68,.1)}
+body:not(.dark-mode) .clock-digital{color:#111827}body:not(.dark-mode) .clock-date{color:#64748b}body:not(.dark-mode) .clock-label{color:#b91c1c}
+#backToTop{position:fixed;right:20px;bottom:100px;z-index:30;width:38px;height:38px;border-radius:12px;border:1px solid #ef4444;background:#1a2940;color:#fff;font-size:21px;cursor:pointer;display:none;box-shadow:0 8px 22px #0002}
+body:not(.dark-mode) #backToTop{background:#fff;color:#b91c1c;border-color:#fecaca}
+@media(max-width:600px){#siteClock{right:10px;bottom:10px;gap:8px;padding:8px 10px 8px 8px;border-radius:15px}.clock-face{width:48px;height:48px;flex-basis:48px}.m12,.m6{left:20px}.m3,.m9{top:20px}.clock-readout{min-width:100px}.clock-digital{font-size:17px}.clock-label{font-size:8px}#backToTop{right:12px;bottom:88px}}
 </style>
 <script id="future-enhancements">
 (() => {
  const clock=document.getElementById('siteClock');
  const topBtn=document.getElementById('backToTop');
+ const digital=document.getElementById('clockDigital');
+ const dateEl=document.getElementById('clockDate');
+ const hourHand=document.getElementById('clockHour');
+ const minuteHand=document.getElementById('clockMinute');
+ const secondHand=document.getElementById('clockSecond');
  const tick=()=>{
-   const now=new Date();
-   const time=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'Asia/Dhaka'}).format(now);
-   const date=new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'Asia/Dhaka'}).format(now);
-   clock.textContent='BD '+time+' · '+date;
+   const parts=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'Asia/Dhaka'}).formatToParts(new Date());
+   const val=Object.fromEntries(parts.filter(p=>p.type!=='literal').map(p=>[p.type,Number(p.value)]));
+   const h=val.hour||0,m=val.minute||0,sec=val.second||0;
+   digital.textContent=[h,m,sec].map(n=>String(n).padStart(2,'0')).join(':');
+   dateEl.textContent=new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric',timeZone:'Asia/Dhaka'}).format(new Date());
+   hourHand.style.transform=`rotate(${((h%12)*30)+(m*.5)+(sec/120)}deg)`;
+   minuteHand.style.transform=`rotate(${m*6+(sec*.1)}deg)`;
+   secondHand.style.transform=`rotate(${sec*6}deg)`;
  };
  tick(); setInterval(tick,1000);
  window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>350?'block':'none'},{passive:true});
  topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
 </script>
-
-
 <style id="premium-software-hover">
 /* Premium smooth hover interaction for every software card */
 .tools-grid .tool-card{
@@ -552,9 +574,6 @@ body:not(.dark-mode) #backToTop{background:#fff;color:#263650;border-color:#dbe4
 @media(hover:none){.tools-grid .tool-card:hover{transform:none;box-shadow:none}}
 @media(prefers-reduced-motion:reduce){.tools-grid .tool-card,.tools-grid .tool-card::after,.tools-grid .tool-card *{transition:none!important;animation:none!important}}
 </style>
-
-
-
 <style id="cute-hover-animations">
 /* High-contrast hover effects that stay visible in BOTH light and dark themes */
 .tools-grid .tool-card {
@@ -628,8 +647,6 @@ body.dark-mode .tools-grid .tool-card:focus-visible {
   });
 })();
 </script>
-
-
 <style id="high-contrast-light-gradient-hover">
 /* Bright gradient hover so the effect remains obvious on the white theme */
 body:not(.dark-mode) .tools-grid .tool-card {
@@ -670,8 +687,6 @@ body:not(.dark-mode) .tools-grid .tool-card:focus-visible::after {
   background:linear-gradient(115deg,transparent 8%,rgba(255,255,255,.42) 45%,transparent 78%) !important;
 }
 </style>
-
-
 <style id="premium-dark-mode-card-polish">
 /* Premium dark-mode treatment: rich surfaces at rest, vivid readable gradients on hover */
 body.dark-mode .tools-grid .tool-card {
@@ -829,6 +844,5 @@ body:not(.dark-mode) footer {color:#61708b !important;}
 }
 
 </style>
-
 </body>
 </html>
